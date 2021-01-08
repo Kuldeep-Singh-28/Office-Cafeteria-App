@@ -4,10 +4,10 @@
 [+] Git setup and first commit
 [+] Install Laravel Mix - setup js and scss
 [+] Install tailwind css
-[-] Create Home page using Html and Css
-[-] Create Cart page - order summary section - empty cart section
-[-] - move routes to routes files
-[-] - Create dedicated controllers
+[+] Create Home page using Html and Css
+[+] Create Cart page - order summary section - empty cart section
+[+] - move routes to routes files
+[+] - Create dedicated controllers
 [-] Add to cart functionality
 [-] Fetch all Cafeteria Menu from db and show on home page
 [-] Create menu model and put dummy Data - connect to mongo db - use connect-mongo for session store - dependancies - mongoose, express-session, connect-mongo, dotenv - axios to send ajax request - install notification library npm i noty https://ned.im/noty/#/

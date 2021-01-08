@@ -39,3 +39,29 @@ section.hero {
     color: $pure;
   }
 }
+
+.btn-primary {
+  background: $primary;
+  transition: $transition;
+  &:hover {
+    background: $primary-hover;
+  }
+}
+section.cart {
+  background: $secondary;
+  .amount {
+    color: $primary;
+  }
+}
+
+// login
+section.login {
+  background: $secondary;
+  min-height: calc(100vh - 86px);
+  a {
+    color: $primary;
+    &:hover {
+      color: $primary-hover;
+    }
+  }
+}
