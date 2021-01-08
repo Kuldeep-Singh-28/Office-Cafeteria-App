@@ -1,9 +1,9 @@
 [+] Create directory structure
-[-] Create a NPM project and install all dependancies - Dependancies - express - ejs express-ejs-layouts - Dev dependancies - nodemon
-[-] Create Express server - Create a server.js file
-[-] Git setup and first commit
-[-] Install Laravel Mix - setup js and scss
-[-] Install tailwind css
+[+] Create a NPM project and install all dependancies - Dependancies - express - ejs express-ejs-layouts - Dev dependancies - nodemon
+[+] Create Express server - Create a server.js file
+[+] Git setup and first commit
+[+] Install Laravel Mix - setup js and scss
+[+] Install tailwind css
 [-] Create Home page using Html and Css
 [-] Create Cart page - order summary section - empty cart section
 [-] - move routes to routes files
