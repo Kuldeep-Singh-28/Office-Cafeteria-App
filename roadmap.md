@@ -11,8 +11,8 @@
 [+] Add to cart functionality
 [+] Fetch all Cafeteria Menu from db and show on home page
 [+] Create menu model and put dummy Data - connect to mongo db - use connect-mongo for session store - dependancies - mongoose, express-session, connect-mongo, dotenv - axios to send ajax request - install notification library npm i noty https://ned.im/noty/#/
-[-] Create login page with route
-[-] Create register page with route
+[+] Create login page with route
+[+] Create register page with route
 [-] Build register crud - dependancies express-flash express-session dotenv - status code article https://www.restapitutorial.com/httpstatuscodes.html
 [-] Build login using passport - install dependancies passport passport-local express-session
 [-] Create Order controller and link it in server.js

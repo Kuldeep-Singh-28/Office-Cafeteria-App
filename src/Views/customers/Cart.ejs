@@ -11,13 +11,13 @@
         <div class="items-list">
           <% for(let pizza of Object.values(session.cart.items)) { %>
           <div class="flex justify-between items-center my-8">
-            <img class="w-24" src="/img/pizza.png" alt="" />
+            <img class="w-24" src="/img/<%= pizza.item.image%>" alt="" />
             <div class="flex-1 ml-4">
-              <h1>Marinara</h1>
-              <span>MEDIUM</span>
+              <h1><%= pizza.item.name%></h1>
+              <span><%= pizza.item.size%></span>
             </div>
-            <span class="flex-1">1 Pcs</span>
-            <span class="font-bold text-lg">Rs. 300</span>
+            <span class="flex-1">Pcs <%= pizza.qty%></span>
+            <span class="font-bold text-lg">Rs. <%= pizza.item.price%></span>
           </div>
           <% } %>
         </div>
@@ -27,7 +27,9 @@
         <div class="text-right py-4">
           <div class="">
             <span class="text-lg font-bold">Total Amount:</span>
-            <span class="amount text-2xl font-bold ml-4">Rs. 300</span>
+            <span class="amount text-2xl font-bold ml-4"
+              >Rs. <%= session.cart.totalPrice%></span
+            >
           </div>
           <div class="">
             <form action="" class="mt-12">

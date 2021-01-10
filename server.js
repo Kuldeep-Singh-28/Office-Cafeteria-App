@@ -38,7 +38,6 @@ let mongoStore = new MongoDbStore({
 });
 
 // Session config
-
 app.use(
   session({
     secret: process.env.COOKIE_SECRET,
@@ -55,6 +54,7 @@ app.use(flash());
 // assests
 app.use(express.static("public"));
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // global middleware
 app.use((req, res, next) => {

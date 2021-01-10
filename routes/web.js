@@ -11,6 +11,7 @@ const initRoutes = (app) => {
   //   auth
   app.get("/login", authController().login);
   app.get("/register", authController().register);
+  app.post("/register", authController().postRegister);
 
   //  cart
   app.get("/cart", cartController().index);
