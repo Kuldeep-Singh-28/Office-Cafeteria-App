@@ -8,12 +8,13 @@ const initRoutes = (app) => {
   //   home
   app.get("/", homeController().index);
 
-  //  cart
-  app.get("/cart", cartController().cart);
-
   //   auth
   app.get("/login", authController().login);
   app.get("/register", authController().register);
+
+  //  cart
+  app.get("/cart", cartController().index);
+  app.post("/update-cart", cartController().update);
 };
 
 module.exports = initRoutes;

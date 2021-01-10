@@ -17,22 +17,29 @@
 <section class="menu container px-12 mx-auto py-8">
   <h1 class="text-xl font-bold mb-8">All Pizza</h1>
   <div
-    class="grid xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-5 md:gap-y-20 md:gap-x-20"
+    class="grid xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 md:gap-y-20 md:gap-x-20"
   >
     <% pizzas.forEach(function(pizza) { %>
+
     <div class="w-64">
-      <img class="h-40 mb-4 mx-auto" src="/img/pizza.png" alt="" />
+      <img class="h-40 mb-4 mx-auto" src="/img/<%= pizza.image %>" alt="" />
       <div class="text-center">
-        <h2 class="mb-4 text-lg">Margherita</h2>
-        <span class="size py-1 px-4 text-xs rounded-full uppercase">small</span>
+        <h2 class="mb-4 text-lg"><%= pizza.name %></h2>
+        <span class="size py-1 px-4 text-xs rounded-full uppercase"
+          ><%= pizza.size %></span
+        >
         <div class="flex items-center justify-around mt-6">
-          <span class="font-bold text-lg">Rs. 250</span>
-          <button class="add-to-cart py-1 px-5 rounded-full font-bold">
+          <span class="font-bold text-lg">₹ <%= pizza.price %></span>
+          <button
+            data-pizza="<%= JSON.stringify(pizza) %>"
+            class="add-to-cart py-1 px-5 rounded-full font-bold"
+          >
             <span>+</span> <span class="ml-4">Add</span>
           </button>
         </div>
       </div>
     </div>
+
     <% })%>
   </div>
 </section>

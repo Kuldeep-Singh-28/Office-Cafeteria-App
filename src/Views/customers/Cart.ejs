@@ -1,4 +1,5 @@
 <section class="cart py-16 px-16">
+  <% if(session.cart) { %>
   <div class="order container mx-auto">
     <div class="flex items-center border-b border-gray-300 pb-4">
       <img src="/img/cart-black.png" alt="cart" />
@@ -8,6 +9,7 @@
     <div class="main flex px-2">
       <div class="left flex-1">
         <div class="items-list">
+          <% for(let pizza of Object.values(session.cart.items)) { %>
           <div class="flex justify-between items-center my-8">
             <img class="w-24" src="/img/pizza.png" alt="" />
             <div class="flex-1 ml-4">
@@ -17,24 +19,7 @@
             <span class="flex-1">1 Pcs</span>
             <span class="font-bold text-lg">Rs. 300</span>
           </div>
-          <div class="flex items-center my-8">
-            <img class="w-24" src="/img/pizza.png" alt="" />
-            <div class="flex-1 ml-4">
-              <h1>Marinara</h1>
-              <span>MEDIUM</span>
-            </div>
-            <span class="flex-1">1 Pcs</span>
-            <span class="font-bold text-lg">Rs. 300</span>
-          </div>
-          <div class="flex items-center my-8">
-            <img class="w-24" src="/img/pizza.png" alt="" />
-            <div class="flex-1 ml-4">
-              <h1>Marinara</h1>
-              <span>MEDIUM</span>
-            </div>
-            <span class="flex-1">1 Pcs</span>
-            <span class="font-bold text-lg">Rs. 300</span>
-          </div>
+          <% } %>
         </div>
         <hr />
       </div>
@@ -76,8 +61,9 @@
       </div>
     </div>
   </div>
+  <% } else { %>
 
-  <!-- <div class="empty-cart py-16">
+  <div class="empty-cart py-16">
     <div class="container mx-auto text-center">
       <h1 class="text-3xl font-bold mb-2">Cart Empty 😕</h1>
       <p class="text-gray-500 text-lg mb-12">
@@ -91,5 +77,7 @@
         >Go back</a
       >
     </div>
-  </div> -->
+  </div>
+
+  <% } %>
 </section>
