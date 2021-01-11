@@ -8,6 +8,7 @@ const initRoutes = (app) => {
 
   //   home
   app.get("/", homeController().index);
+  app.get("/menu", homeController().menu);
 
   //   auth
   app.get("/login", guest, authController().login);

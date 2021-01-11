@@ -3,18 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pizza Delivery - Are you hungry?</title>
+    <title>Cafeteria - Are you hungry?</title>
     <link rel="stylesheet" href="/css/app.css" />
-    <link
-      href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
-      rel="stylesheet"
-    />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+    <!--========== BOX ICONS ==========-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <!--========== SCROLL TOP ==========-->
+    <a href="#" class="scrolltop" id="scroll-top">
+      <i class="bx bx-chevron-up scrolltop__icon"></i>
+    </a>
+
+    <!--========== HEADER ==========-->
+    <header class="l-header" id="header">
+      <nav class="nav bd-container">
+        <a href="/" class="nav__logo"
+          ><img width="70px" src="/img/logo.png" alt="logo.png"
+        /></a>
+
+        <div class="nav__menu" id="nav-menu">
+          <ul class="nav__list">
+            <li class="nav__item">
+              <a href="/" class="nav__link active-link">Home</a>
+            </li>
+            <li class="nav__item">
+              <a href="/menu" class="nav__link">Menu</a>
+            </li>
+            <li class="nav__item">
+              <a href="#services" class="nav__link">Offers</a>
+            </li>
+            <% if(user) { %>
+            <li class="nav__item">
+              <form id="logout" action="/logout" method="POST">
+                <a
+                  class="nav__link"
+                  onclick="document.getElementById('logout').submit()"
+                  href="#"
+                  >Logout</a
+                >
+              </form>
+            </li>
+            <% } else { %>
+            <li class="nav__item">
+              <a class="nav__link" href="/register">Register</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav__link" href="/login">Login</a>
+            </li>
+            <% } %>
+            <li class="nav__item">
+              <a href="/cart" class="nav__link rounded-full flex items-center">
+                <span id="cartCounter" class="font-bold"
+                  ><%= session.cart ? session.cart.totalQty : '' %></span
+                >
+                <img class="nav__link" src="/img/cart1.png" alt="cart.png" />
+              </a>
+            </li>
+
+            <li><i class="bx bx-moon change-theme" id="theme-button"></i></li>
+          </ul>
+        </div>
+
+        <div class="nav__toggle" id="nav-toggle">
+          <i class="bx bx-menu"></i>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ========== HEADER ==========
+
     <nav class="container px-8 mx-auto flex items-center justify-between py-4">
       <div class="">
         <a href="/"><img src="/img/logo.png" alt="logo.png" /></a>
@@ -49,10 +114,70 @@
           </li>
         </ul>
       </div>
-    </nav>
+    </nav> -->
 
-    <%- body %>
+    <main class="l-main">
+      <!--========== HOME ==========-->
+      <%- body %>
+    </main>
+
+    <!--========== FOOTER ==========-->
+    <footer class="footer section bd-container">
+      <div class="footer__container bd-grid">
+        <div class="footer__content">
+          <a href="#" class="footer__logo">Cafeteria Food</a>
+          <span class="footer__description">Alpha-Dev company</span>
+          <div>
+            <a href="#" class="footer__social"
+              ><i class="bx bxl-facebook"></i
+            ></a>
+            <a href="#" class="footer__social"
+              ><i class="bx bxl-instagram"></i
+            ></a>
+            <a href="#" class="footer__social"
+              ><i class="bx bxl-twitter"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="footer__content">
+          <h3 class="footer__title">Services</h3>
+          <ul>
+            <li><a href="#" class="footer__link">Delivery</a></li>
+            <li><a href="#" class="footer__link">Pricing</a></li>
+            <li><a href="#" class="footer__link">Fast food</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__content">
+          <h3 class="footer__title">Information</h3>
+          <ul>
+            <li><a href="#" class="footer__link">Event</a></li>
+            <li><a href="#" class="footer__link">Contact us</a></li>
+            <li><a href="#" class="footer__link">Privacy policy</a></li>
+            <li><a href="#" class="footer__link">Terms of services</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__content">
+          <h3 class="footer__title">Adress</h3>
+          <ul>
+            <li>Loram - Loram</li>
+            <li>Loram #999</li>
+            <li>111 - 222 - 777</li>
+            <li>cafeteriafood@email.com</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footer__copy">&#169; 2021 Cafeteria food. All right reserved</p>
+    </footer>
+
+    <!--========== MAIN JS ==========-->
+    <!-- <script defer src="/js/main.js"></script> -->
 
     <script defer src="/js/app.js"></script>
+    <!--========== SCROLL REVEAL ==========-->
+    <script src="https://unpkg.com/scrollreveal"></script>
   </body>
 </html>

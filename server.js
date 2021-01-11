@@ -12,7 +12,7 @@ const MongoDbStore = require("connect-mongo")(session);
 const passport = require("passport");
 // Database connection
 
-const url = "mongodb://localhost/pizza";
+const url = "mongodb://localhost/food";
 mongoose.connect(url, {
   useNewUrlParser: true,
   useCreateIndex: true,
@@ -20,7 +20,7 @@ mongoose.connect(url, {
   useFindAndModify: true,
 });
 // mongoose.connect(
-//   `mongodb+srv://kuldeepdb:kuldeep28@pizzacluster.oubsw.mongodb.net/<dbname>?retryWrites=true&w=majority`
+//   `mongodb+srv://kuldeepdb:kuldeep28@foodcluster.oubsw.mongodb.net/<dbname>?retryWrites=true&w=majority`
 // );
 const connection = mongoose.connection;
 connection

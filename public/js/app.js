@@ -1850,10 +1850,120 @@ __webpack_require__.r(__webpack_exports__);
 
 var addToCart = document.querySelectorAll(".add-to-cart");
 var cartCounter = document.querySelector("#cartCounter");
+/*==================== SHOW MENU ====================*/
 
-var updateCart = function updateCart(pizza) {
+var showMenu = function showMenu(toggleId, navId) {
+  var toggle = document.getElementById(toggleId),
+      nav = document.getElementById(navId); // Validate that variables exist
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", function () {
+      // We add the show-menu class to the div tag with the nav__menu class
+      nav.classList.toggle("show-menu");
+    });
+  }
+};
+
+showMenu("nav-toggle", "nav-menu");
+/*==================== REMOVE MENU MOBILE ====================*/
+
+var navLink = document.querySelectorAll(".nav__link");
+
+function linkAction() {
+  var navMenu = document.getElementById("nav-menu"); // When we click on each nav__link, we remove the show-menu class
+
+  navMenu.classList.remove("show-menu");
+}
+
+navLink.forEach(function (n) {
+  return n.addEventListener("click", linkAction);
+});
+/*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+
+var sections = document.querySelectorAll("section[id]");
+
+function scrollActive() {
+  var scrollY = window.pageYOffset;
+  sections.forEach(function (current) {
+    var sectionHeight = current.offsetHeight;
+    var sectionTop = current.offsetTop - 50;
+    sectionId = current.getAttribute("id");
+
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      document.querySelector(".nav__menu a[href*=" + sectionId + "]").classList.add("active-link");
+    } else {
+      document.querySelector(".nav__menu a[href*=" + sectionId + "]").classList.remove("active-link");
+    }
+  });
+}
+
+window.addEventListener("scroll", scrollActive);
+/*==================== CHANGE BACKGROUND HEADER ====================*/
+
+function scrollHeader() {
+  var nav = document.getElementById("header"); // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
+
+  if (this.scrollY >= 200) nav.classList.add("scroll-header");else nav.classList.remove("scroll-header");
+}
+
+window.addEventListener("scroll", scrollHeader);
+/*==================== SHOW SCROLL TOP ====================*/
+
+function scrollTop() {
+  var scrollTop = document.getElementById("scroll-top"); // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
+
+  if (this.scrollY >= 560) scrollTop.classList.add("show-scroll");else scrollTop.classList.remove("show-scroll");
+}
+
+window.addEventListener("scroll", scrollTop);
+/*==================== DARK LIGHT THEME ====================*/
+
+var themeButton = document.getElementById("theme-button");
+var darkTheme = "dark-theme";
+var iconTheme = "bx-sun"; // Previously selected topic (if user selected)
+
+var selectedTheme = localStorage.getItem("selected-theme");
+var selectedIcon = localStorage.getItem("selected-icon"); // We obtain the current theme that the interface has by validating the dark-theme class
+
+var getCurrentTheme = function getCurrentTheme() {
+  return document.body.classList.contains(darkTheme) ? "dark" : "light";
+};
+
+var getCurrentIcon = function getCurrentIcon() {
+  return themeButton.classList.contains(iconTheme) ? "bx-moon" : "bx-sun";
+}; // We validate if the user previously chose a topic
+
+
+if (selectedTheme) {
+  // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+  document.body.classList[selectedTheme === "dark" ? "add" : "remove"](darkTheme);
+  themeButton.classList[selectedIcon === "bx-moon" ? "add" : "remove"](iconTheme);
+} // Activate / deactivate the theme manually with the button
+
+
+themeButton.addEventListener("click", function () {
+  // Add or remove the dark / icon theme
+  document.body.classList.toggle(darkTheme);
+  themeButton.classList.toggle(iconTheme); // We save the theme and the current icon that the user chose
+
+  localStorage.setItem("selected-theme", getCurrentTheme());
+  localStorage.setItem("selected-icon", getCurrentIcon());
+});
+/*==================== SCROLL REVEAL ANIMATION ====================*/
+
+var sr = ScrollReveal({
+  origin: "top",
+  distance: "30px",
+  duration: 2000,
+  reset: true
+});
+sr.reveal(".home__data, .home__img,\n            .about__data, .about__img,\n            .services__content, .menu__content,\n            .app__data, .app__img,\n            .contact__data, .contact__button,\n            .footer__content", {
+  interval: 200
+});
+
+var updateCart = function updateCart(food) {
   // axios
-  axios__WEBPACK_IMPORTED_MODULE_0___default().post("/update-cart", pizza).then(function (res) {
+  axios__WEBPACK_IMPORTED_MODULE_0___default().post("/update-cart", food).then(function (res) {
     console.log(res);
     cartCounter.innerText = res.data.totalqty.totalQty;
     new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
@@ -1875,8 +1985,8 @@ var updateCart = function updateCart(pizza) {
 addToCart.forEach(function (btn) {
   btn.addEventListener("click", function (e) {
     e.preventDefault();
-    var pizza = JSON.parse(btn.dataset.pizza);
-    updateCart(pizza);
+    var food = JSON.parse(btn.dataset.food);
+    updateCart(food);
   });
 }); // Remove alert message after X seconds
 
