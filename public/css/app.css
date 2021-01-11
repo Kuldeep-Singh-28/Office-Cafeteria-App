@@ -389,20 +389,6 @@ img {
   height: auto;
 }
 
-nav li:last-child a {
-  background: #fe5f1e;
-}
-nav li:last-child a:hover {
-  background: #b23301;
-}
-
-nav li a {
-  transition: all 0.3s ease-in-out;
-}
-nav li a:hover {
-  color: #fe5f1e;
-}
-
 section.hero {
   background: #f8f8f8;
 }
@@ -441,8 +427,8 @@ section.cart .amount {
 }
 
 section.login {
-  background: #f8f8f8;
-  min-height: calc(100vh - 86px);
+  align-items: center;
+  min-height: calc(100vh);
 }
 section.login a {
   color: #fe5f1e;
@@ -539,6 +525,20 @@ section.login a:hover {
 .nav__toggle {
   font-size: 1.3rem;
   cursor: pointer;
+}
+.nav__cart {
+  display: inline-block;
+}
+.nav .shopping__cart {
+  display: flex;
+  border-radius: 9999px;
+  align-items: center;
+  background: #f1f3f2;
+  padding: 0.3rem 0.6rem 0.3rem 0.8rem;
+}
+.nav .shopping__cart:hover {
+  background: #fe5f1e;
+  color: #27302c;
 }
 
 /* Show menu */

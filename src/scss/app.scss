@@ -120,20 +120,6 @@ img {
 //   height: 100vh;
 // }
 
-nav li:last-child a {
-  background: $primary;
-  &:hover {
-    background: $primary-hover;
-  }
-}
-
-nav li a {
-  transition: $transition;
-  &:hover {
-    color: $primary;
-  }
-}
-
 section.hero {
   background: $secondary;
 }
@@ -172,8 +158,8 @@ section.cart {
 
 // login
 section.login {
-  background: $secondary;
-  min-height: calc(100vh - 86px);
+  align-items: center;
+  min-height: calc(100vh);
   a {
     color: $primary;
     &:hover {
@@ -280,6 +266,20 @@ section.login {
   &__toggle {
     font-size: 1.3rem;
     cursor: pointer;
+  }
+  &__cart {
+    display: inline-block;
+  }
+  .shopping__cart {
+    display: flex;
+    border-radius: 9999px;
+    align-items: center;
+    background: #f1f3f2;
+    padding: 0.3rem 0.6rem 0.3rem 0.8rem;
+    &:hover {
+      background: $primary;
+      color: #27302c;
+    }
   }
 }
 

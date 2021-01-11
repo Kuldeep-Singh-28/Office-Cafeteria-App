@@ -37,7 +37,7 @@ function scrollActive() {
 
   sections.forEach((current) => {
     const sectionHeight = current.offsetHeight;
-    const sectionTop = current.offsetTop - 50;
+    const sectionTop = current.offsetTop - 40;
     sectionId = current.getAttribute("id");
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
@@ -110,8 +110,8 @@ themeButton.addEventListener("click", () => {
 /*==================== SCROLL REVEAL ANIMATION ====================*/
 const sr = ScrollReveal({
   origin: "top",
-  distance: "30px",
-  duration: 2000,
+  distance: "20px",
+  duration: 1000,
   reset: true,
 });
 

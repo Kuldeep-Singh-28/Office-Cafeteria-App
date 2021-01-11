@@ -1886,7 +1886,7 @@ function scrollActive() {
   var scrollY = window.pageYOffset;
   sections.forEach(function (current) {
     var sectionHeight = current.offsetHeight;
-    var sectionTop = current.offsetTop - 50;
+    var sectionTop = current.offsetTop - 40;
     sectionId = current.getAttribute("id");
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
@@ -1953,8 +1953,8 @@ themeButton.addEventListener("click", function () {
 
 var sr = ScrollReveal({
   origin: "top",
-  distance: "30px",
-  duration: 2000,
+  distance: "20px",
+  duration: 1000,
   reset: true
 });
 sr.reveal(".home__data, .home__img,\n            .about__data, .about__img,\n            .services__content, .menu__content,\n            .app__data, .app__img,\n            .contact__data, .contact__button,\n            .footer__content", {

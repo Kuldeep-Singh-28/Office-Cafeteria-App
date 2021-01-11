@@ -10,8 +10,8 @@ const session = require("express-session");
 const flash = require("express-flash");
 const MongoDbStore = require("connect-mongo")(session);
 const passport = require("passport");
-// Database connection
 
+// Database connection
 const url = "mongodb://localhost/food";
 mongoose.connect(url, {
   useNewUrlParser: true,
@@ -19,9 +19,7 @@ mongoose.connect(url, {
   useUnifiedTopology: true,
   useFindAndModify: true,
 });
-// mongoose.connect(
-//   `mongodb+srv://kuldeepdb:kuldeep28@foodcluster.oubsw.mongodb.net/<dbname>?retryWrites=true&w=majority`
-// );
+
 const connection = mongoose.connection;
 connection
   .once("open", () => {
@@ -66,7 +64,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use((req, res, next) => {
   res.locals.session = req.session;
   res.locals.user = req.user;
-
   next();
 });
 

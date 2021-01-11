@@ -35,16 +35,16 @@
               <a href="/" class="nav__link active-link">Home</a>
             </li>
             <li class="nav__item">
-              <a href="/menu" class="nav__link">Menu</a>
+              <a href="/menu" class="nav__link active-link">Menu</a>
             </li>
             <li class="nav__item">
-              <a href="#services" class="nav__link">Offers</a>
+              <a href="#services" class="nav__link active-link">Offers</a>
             </li>
             <% if(user) { %>
             <li class="nav__item">
               <form id="logout" action="/logout" method="POST">
                 <a
-                  class="nav__link"
+                  class="nav__link active-link"
                   onclick="document.getElementById('logout').submit()"
                   href="#"
                   >Logout</a
@@ -53,18 +53,25 @@
             </li>
             <% } else { %>
             <li class="nav__item">
-              <a class="nav__link" href="/register">Register</a>
+              <a class="nav__link active-link" href="/register">Register</a>
             </li>
             <li class="nav__item">
-              <a class="nav__link" href="/login">Login</a>
+              <a class="nav__link active-link" href="/login">Login</a>
             </li>
             <% } %>
-            <li class="nav__item">
-              <a href="/cart" class="nav__link rounded-full flex items-center">
+            <li class="nav__cart nav__item">
+              <a
+                href="/cart"
+                class="shopping__cart nav__link active-link rounded-full flex items-center"
+              >
                 <span id="cartCounter" class="font-bold"
                   ><%= session.cart ? session.cart.totalQty : '' %></span
                 >
-                <img class="nav__link" src="/img/cart1.png" alt="cart.png" />
+                <img
+                  class="nav__link active-link"
+                  src="/img/cart1.png"
+                  alt="cart.png"
+                />
               </a>
             </li>
 
