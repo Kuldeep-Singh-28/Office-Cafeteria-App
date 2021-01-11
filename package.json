@@ -27,6 +27,8 @@
     "express-session": "^1.17.1",
     "mongoose": "^5.11.10",
     "noty": "^3.2.0-beta",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
     "resolve-url-loader": "^3.1.2",
     "tailwindcss": "^2.0.2"
   },
