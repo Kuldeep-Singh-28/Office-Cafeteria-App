@@ -763,6 +763,10 @@ section.login a:hover {
   margin-top: 3.5rem;
 }
 
+a.link {
+  color: #fe5f1e;
+}
+
 /*========== MEDIA QUERIES ==========*/
 @media screen and (min-width: 576px) {
   .home__container,
