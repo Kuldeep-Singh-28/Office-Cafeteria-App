@@ -8,36 +8,137 @@
     href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
     rel="stylesheet"
   />
+  
+  <!-- Anushk Start -->
+
+  <style>
+    #Names{
+      display: flex;
+      padding: 20px;
+      flex-direction: column;
+      width: 100%;
+    }
+    /* #names{
+      background-image: linear-gradient(to right,rgb(68, 209, 152),rgb(17, 212, 226));
+    } */
+
+  </style>
   <body>
-    <section class="menu container mt-12 px-12 mx-auto py-8">
-      <h1 class="text-xl font-bold mb-8">All food</h1>
-      <div
-        class="grid xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-y-10 md:gap-y-20 md:gap-x-20"
-      >
-        <% foods.forEach(function(food) { %>
-
-        <div class="w-64">
-          <img class="h-40 mb-4 mx-auto" src="/img/<%= food.image %>" alt="" />
-          <div class="text-center">
-            <h2 class="mb-4 text-lg"><%= food.name %></h2>
-            <span class="size py-1 px-4 text-xs rounded-full uppercase"
-              ><%= food.size %></span
-            >
-            <div class="flex items-center justify-around mt-6">
-              <span class="font-bold text-lg">₹ <%= food.price %></span>
-              <button
-                data-food="<%= JSON.stringify(food) %>"
-                class="add-to-cart py-1 px-5 rounded-full font-bold"
-              >
-                <span>+</span> <span class="ml-4">Add</span>
-              </button>
+    
+      <section class="menu container px-12 mx-12  mt-12  py-8">
+        
+            <!-- Search -->
+            <input
+            id="filterInput"
+            class="border border-gray-400 p-2 w-1/2 mb-4 rounded-md"
+            type="text"
+            placeholder="Search Food"
+            style="outline-width: 0; position: fixed;"
+            />
+        
+            <div class="text-xl font-bold mt-16">
+              <a href="/menu">All food</a>
             </div>
-          </div>
-        </div>
 
-        <% })%>
-      </div>
-    </section>
+                     <div class="grid xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-y-10 md:gap-y-20 md:gap-x-20"
+                     >
+                          <div id="names">
+                            <% foods.forEach(function(food) { %>
+                              
+                                
+                                    <img class="h-40 mb-4 mx-auto" src="/img/<%= food.image %>" alt="" />
+                                  <div class="text-center">
+                                    
+                                        <div  style="color: rgb(0, 47, 255); font-size: 20px; margin-bottom: 10px;" class="collection-item" >
+                                          <a href="#"><%= food.name %></a>
+                                        </div>
+                      
+                                        <h6 class="sizetext-xs rounded-full uppercase"
+                                          ><%= food.size %>
+                                        </h6>
+                                        
+                                        <div 
+                                          class="flex items-center justify-around">
+                                          <h5 class="font-bold text-lg">₹ <%= food.price %></h5>
+                                          <div id="food__INFO3">
+                                                <button
+                                                data-food="<%= JSON.stringify(food) %>"
+                                                class="add-to-cart py-1 px-5 rounded-full font-bold"
+                                                >  
+                                                <span>+</span> <span class="ml-4">Add</span>
+                                                </button>
+                                          </div> 
+                                        </div> 
+                                  
+                                  </div>
+                                  
+                              
+                            <% })%>
+                            <hr>
+                          </div>
+                      </div>    
+                <!-- </div> -->
+
+      </section>
+
+    <script>
+      //Get input Element
+      let filterInput = document.getElementById("filterInput");
+      //Add Event Listener
+      filterInput.addEventListener("keyup",filterNames);
+    
+      function filterNames(){
+        console.log(1);
+    
+        // Get Value Of input
+        let filterValue = document.getElementById("filterInput").value.toUpperCase();
+    
+        console.log(filterValue);
+    
+        //Get Names ul
+        let ul = document.getElementById("names");
+    
+        let li = ul.querySelectorAll("div.collection-item");
+
+        let target__Image = document.getElementById("names");
+    
+        let image__Visibility = target__Image.querySelectorAll("img");
+
+        let target__FoodSize = document.getElementById("names");
+    
+        let foodSize__Visibility = target__FoodSize.querySelectorAll("h6");
+
+        let target__FoodPrice = document.getElementById("names");
+    
+        let foodprice__Visibility = target__FoodPrice.querySelectorAll("h5");
+    
+        let target__Button = document.getElementById("names");
+    
+        let button__Visibility = target__Button.querySelectorAll("button");
+
+        for(let i=0;i<li.length;i++)
+        {
+          let a = li[i].getElementsByTagName("a")[0];
+          // If Matched
+          if(a.innerHTML.toUpperCase().indexOf(filterValue)>-1)
+          {
+            li[i].style.display = "";
+            image__Visibility[i].style.display = "";
+            foodSize__Visibility[i].style.display = "";
+            foodprice__Visibility[i].style.display = "";
+            button__Visibility[i].style.display = "";      
+          }
+          else{
+            li[i].style.display = "none";
+            image__Visibility[i].style.display = "none";   
+            foodSize__Visibility[i].style.display = "none";
+            foodprice__Visibility[i].style.display = "none";
+            button__Visibility[i].style.display = "none";    
+          }
+        }
+      }
+    </script>
+<!-- Anushk End -->
   </body>
 </html>
 
