@@ -15,13 +15,13 @@
 [+] Create register page with route = _preview_
 [+] Build register crud - dependancies express-flash express-session dotenv - status code article https://www.restapitutorial.com/httpstatuscodes.html
 [+] Build login using passport - install dependancies passport passport-local express-session
-[-] Create Order controller and link it in server.js
-[-] Create Orders view with table for customer and admin
-[-] Place order functionality
-[-] Show all my orders on custormer orders page
-[-] Show orders on admin orders page
-[-] Change order status
-[-] Create Orders single page with status
+[+] Create Order controller and link it in server.js
+[+] Create Orders view with table for customer and admin
+[+] Place order functionality
+[+] Show all my orders on custormer orders page
+[+] Show orders on admin orders page
+[+] Change order status
+[+] Create Orders single page with status
 [-] Create mode of payment
 [-] Order tracker // confirme order, out for delivery...
 [-] Socket connection - dependancies socket.io
