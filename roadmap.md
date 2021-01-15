@@ -22,9 +22,9 @@
 [+] Show orders on admin orders page
 [+] Change order status
 [+] Create Orders single page with status
+[+] Order tracker // confirme order, out for delivery...
+[+] Socket connection - dependancies socket.io
 [-] Create mode of payment
-[-] Order tracker // confirme order, out for delivery...
-[-] Socket connection - dependancies socket.io
 [-] Build project for deployment
 [-] Deploy project on live server
 
