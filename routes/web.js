@@ -36,6 +36,11 @@ const initRoutes = (app) => {
   // Admin routes
   app.get("/admin/orders", admin, adminOrderController().index);
   app.post("/admin/order/status", admin, statusController().update);
+
+  // Deepika ------starts-----
+  // contactus
+  app.post("/contact_us", homeController().contact_us);
+  // Deepika ------end-----
 };
 
 module.exports = initRoutes;
