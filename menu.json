@@ -1,74 +1,299 @@
 [
   {
     "_id": {
-      "$oid": "5eee651f739f8c674fd736ee"
+    "$oid": "5eee651f739f8c674fd611e2"
     },
-    "name": "Margherita",
-    "image": "pizza.png",
-    "price": "250",
+    "name": "Bhelpuri",
+    "image": "bhelpuri.jpg",
+    "price": "50",
     "size": "small"
-  },
-  {
+},
+{
     "_id": {
-      "$oid": "5eee6671a27a66807cf2bea3"
+    "$oid": "5eee651f739f8c674fd612e2"
     },
-    "name": "Marinara",
-    "image": "pizza.png",
-    "price": "300",
-    "size": "medium"
-  },
-  {
-    "_id": {
-      "$oid": "5eee6692a27a66807cf2bea4"
-    },
-    "name": "Carbonara",
-    "image": "pizza.png",
-    "price": "200",
+    "name": "Boiled Egg",
+    "image": "boiled_egg.jpg",
+    "price": "85",
     "size": "small"
-  },
-  {
+},
+{
     "_id": {
-      "$oid": "5eee66a5a27a66807cf2bea5"
+    "$oid": "5eee651f739f8c674fd613e2"
     },
-    "name": "Americana",
-    "image": "pizza.png",
-    "price": "500",
+    "name": "Chicken Burger",
+    "image": "chicken_burger.jpg",
+    "price": "120",
+    "size": "small"
+},
+{
+    "_id": {
+    "$oid": "5eee651f739f8c674fd614e2"
+    },
+    "name": "Dosa",
+    "image": "dosa.jpg",
+    "price": "90",
     "size": "large"
-  },
-  {
+},
+{
     "_id": {
-      "$oid": "5eee66c4a27a66807cf2bea6"
+    "$oid": "5eee651f739f8c674fd615e2"
     },
-    "name": "Chicken Mushroom",
-    "image": "pizza.png",
-    "price": "350",
-    "size": "medium"
-  },
-  {
-    "_id": {
-      "$oid": "5eee66cfa27a66807cf2bea7"
-    },
-    "name": "Paneer pizza",
-    "image": "pizza.png",
-    "price": "200",
+    "name": "Fries",
+    "image": "fries.jpg",
+    "price": "75",
     "size": "small"
-  },
-  {
+},
+{
     "_id": {
-      "$oid": "5eee66eea27a66807cf2bea8"
+    "$oid": "5eee651f739f8c674fd616e2"
     },
-    "name": "Vegies pizza",
-    "image": "pizza.png",
-    "price": "600",
-    "size": "large"
-  },
-  {
+    "name": "Noodles",
+    "image": "noodles.jpg",
+    "price": "95",
+    "size": "small"
+},
+{
     "_id": {
-      "$oid": "5eee6717a27a66807cf2bea9"
+    "$oid": "5eee651f739f8c674fd617e2"
     },
-    "name": "Pepperoni",
-    "image": "pizza.png",
-    "price": "500",
-    "size": "medium"
-  }
-]
+    "name": "Pani Puri",
+    "image": "panipuri.jpg",
+    "price": "55",
+    "size": "small"
+},
+{
+    "_id": {
+    "$oid": "5eee651f739f8c674fd618e2"
+    },
+    "name": "Pav Bhaji",
+    "image": "pavbhaji.jpg",
+    "price": "75",
+    "size": "small"
+},
+{
+    "_id": {
+    "$oid": "5eee651f739f8c674fd619e2"
+    },
+    "name": "Red Pasta",
+    "image": "red_pasta.jpg",
+    "price": "85",
+    "size": "small"
+},
+{
+    "_id": {
+    "$oid": "5eee651f739f8c674fd620e2"
+    },
+    "name": "White Pasta",
+    "image": "white_pasta.jpg",
+    "price": "85",
+    "size": "small"
+},
+{
+    "_id": {
+    "$oid": "5eee651f739f8c674fd621e2"
+    },
+    "name": "Sandwich",
+    "image": "sandwich.jpg",
+    "price": "35",
+    "size": "small"
+},
+{
+    "_id": {
+    "$oid": "5eee651f739f8c674fd622e2"
+    },
+    "name": "Samosa",
+    "image": "samosa.jpg",
+    "price": "40",
+    "size": "small"
+},
+{
+  "_id": {
+    "$oid": "5eee651f739f8c674fd731ef"
+  },
+  "name": "Mango Shake",
+  "image": "mango_shake.jpg",
+  "price": "80",
+  "size": "large"
+},
+{
+  "_id": {
+  "$oid": "5eee651f739f8c674fd732ef"
+  },
+  "name": "Orange Juice",
+  "image": "orange_juice.jpg",
+  "price": "75",
+  "size": "small"
+},
+{
+  "_id": {
+  "$oid": "5eee651f739f8c674fd733ef"
+  },
+  "name": "Raspberry Smoothie",
+  "image": "raspberry_smoothie.jpg",
+  "price": "95",
+  "size": "small"
+},
+{
+  "_id": {
+  "$oid": "5eee651f739f8c674fd734ef"
+  },
+  "name": "Soda",
+  "image": "soda.jpg",
+  "price": "70",
+  "size": "small"
+},
+{
+  "_id": {
+  "$oid": "5eee651f739f8c674fd735ef"
+  },
+  "name": "Strawberry Milkshake",
+  "image": "strawberry_milkshake.jpg",
+  "price": "100",
+  "size": "small"
+},
+{
+  "_id": {
+    "$oid": "5eee651f739f8c674fd731ee"
+  },
+  "name": "Margherita",
+  "image": "Margherita.jpg",
+  "price": "250",
+  "size": "small"
+},
+{
+  "_id": {
+    "$oid": "5eee651f739f8c674fd732ee"
+  },
+  "name": "Marinara",
+  "image": "Marinara.jpg",
+  "price": "300",
+  "size": "medium"
+},
+{
+  "_id": {
+    "$oid": "5eee651f739f8c674fd733ee"
+  },
+  "name": "Carbonara",
+  "image": "Carbonara.jpg",
+  "price": "200",
+  "size": "small"
+},
+{
+  "_id": {
+    "$oid": "5eee651f739f8c674fd734ee"
+  },
+  "name": "Americana",
+  "image": "Americana.jpg",
+  "price": "500",
+  "size": "large"
+},
+{
+  "_id": {
+    "$oid": "5eee651f739f8c674fd735ee"
+  },
+  "name": "Chicken Mushroom",
+  "image": "Chicken_Mushroom.jpg",
+  "price": "350",
+  "size": "medium"
+},
+{
+  "_id": {
+    "$oid": "5eee651f739f8c674fd736ee"
+  },
+  "name": "Paneer pizza",
+  "image": "Paneer_pizza.jpg",
+  "price": "200",
+  "size": "small"
+},
+{
+  "_id": {
+    "$oid": "5eee651f739f8c674fd737ee"
+  },
+  "name": "Vegies pizza",
+  "image": "Vegies_pizza.jpg",
+  "price": "600",
+  "size": "large"
+},
+{
+  "_id": {
+  "$oid": "5eee651f739f8c674fd730ed"
+  },
+  "name": "Cappuccino",
+  "image": "cappuccino.jpg",
+  "price": "95",
+  "size": "small"
+},
+{
+  "_id": {
+  "$oid": "5eee651f739f8c674fd731ed"
+  },
+  "name": "Cappuccino",
+  "image": "cappuccino1.jpg",
+  "price": "135",
+  "size": "medium"
+},
+{
+  "_id": {
+  "$oid": "5eee651f739f8c674fd732ed"
+  },
+  "name": "Espresso",
+  "image": "espresso.jpg",
+  "price": "140",
+  "size": "small"
+},
+{
+  "_id": {
+  "$oid": "5eee651f739f8c674fd733ed"
+  },
+  "name": "Barista",
+  "image": "barista.jpg",
+  "price": "125",
+  "size": "small"
+},
+{
+  "_id": {
+  "$oid": "5eee651f739f8c674fd734ed"
+  },
+  "name": "Black Coffee",
+  "image": "black_coffee.jpg",
+  "price": "100",
+  "size": "small"
+},
+{
+  "_id": {
+  "$oid": "5eee651f739f8c674fd735ed"
+  },
+  "name": "Black Coffee",
+  "image": "black_coffee1.jpg",
+  "price": "120",
+  "size": "medium"
+},
+{
+  "_id": {
+  "$oid": "5eee651f739f8c674fd736ed"
+  },
+  "name": "Chai",
+  "image": "chai.jpg",
+  "price": "50",
+  "size": "small"
+},
+{
+  "_id": {
+  "$oid": "5eee651f739f8c674fd737ed"
+  },
+  "name": "Latte",
+  "image": "latte.jpg",
+  "price": "100",
+  "size": "small"
+},
+{
+  "_id": {
+  "$oid": "5eee651f739f8c674fd738ed"
+  },
+  "name": "Lemon Tea",
+  "image": "lemon_tea.jpg",
+  "price": "90",
+  "size": "small"
+}
+] 
