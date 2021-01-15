@@ -4,56 +4,340 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
+   <!-- Link Styling -->
+  <link rel="stylesheet" href="/css/menu.css" />
+  
   <link
     href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
     rel="stylesheet"
   />
+    
   <body>
-    <section class="menu container mt-12 px-12 mx-auto py-8">
-      <h1 class="text-xl font-bold mb-8">All food</h1>
-      <div
-        class="grid xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 2xl:grid-cols-4 gap-y-10 md:gap-y-20 md:gap-x-20"
-      >
-        <% foods.forEach(function(food) { %>
+    
+      <section class="menu container px-12 mx-12 mx-auto mt-12  py-8">
+        
+            <!-- Heading   -->
+            <div class="container mb-3">
+              <a href="/menu" class="text-xl font-bold" >All Varieties</a>
+            </div>    
 
-        <div class="w-64">
-          <img class="h-40 mb-4 mx-auto" src="/img/<%= food.image %>" alt="" />
-          <div class="text-center">
-            <h2 class="mb-4 text-lg"><%= food.name %></h2>
-            <span class="size py-1 px-4 text-xs rounded-full uppercase"
-              ><%= food.size %></span
-            >
-            <div class="flex items-center justify-around mt-6">
-              <span class="font-bold text-lg">₹ <%= food.price %></span>
-              <button
-                data-food="<%= JSON.stringify(food) %>"
-                class="add-to-cart py-1 px-5 rounded-full font-bold"
-              >
-                <span>+</span> <span class="ml-4">Add</span>
-              </button>
+            <!-- Search -->
+            <div class="container">
+                <input
+                id="filterInput"
+                class="border border-gray-400 p-2 w-1/2 mb-2 rounded-md"
+                type="text"
+                placeholder="Search Food Items"
+                style="margin-right: 100px; margin-top: 20px; max-width: 300px; outline-width: 0; position: fixed;"
+                /> 
+            </div>     
+            <hr>
+
+            <!-- Varieties -->
+            <div class="container mt-16">
+
+                <!-- Pizza -->
+                        
+                <h2 class="font-bold">Pizza</h2>
+                <div class="wrapper1" id="names1">  
+                  <% foods.forEach(function(food) { %> 
+                    <% if(food.id[food.id.length-1]=='e') { %> 
+                  <div class="item1">
+                    <div class="text-center" >
+                      <img class="h-14 w-20 mt-3 mx-auto" src="/img/<%= food.image %>" alt="" />
+                      <div style="color: rgb(19, 31, 83); margin-top: 10px; font-weight: 700; font-size: 15px; " class="collection-item1">
+                        <a href="#"><%= food.name %></a>
+                       </div>
+                      
+                      <div id="food__Info" style="margin-left: 5px;" class="text-left mx-auto mt-1">
+                        <h3 style="color: rgb(189, 121, 135);" class="font-bold text-md uppercase ml-1"><%= food.size %></h3>
+                        <h5 style="color: rgb(190, 105, 122);" class="font-bold text-md ml-20">₹ <%= food.price %></h5>               
+                      </div>
+                      
+                      <div class="mt-2 mb-1">
+                        <button
+                            data-food="<%= JSON.stringify(food) %>"
+                            class="add-to-cart px-3 rounded-full font-bold"
+                            >  
+                            <span>+</span> <span class="ml-3">Add</span>
+                            </button>
+                      </div>
+                    </div>
+                  </div>
+                  <% }%>
+                  <% })%>
+                </div>
+
+                    <!-- Coffee -->
+                                            
+                    <h2 class="font-bold">Coffee</h2>
+                    <div class="wrapper1" id="names2">  
+                      <% foods.forEach(function(food) { %> 
+                        <% if(food.id[food.id.length-1]=='d') { %> 
+                      <div class="item2">
+                        <div class="text-center" >
+                          <img class="h-14 w-20 mt-3 mx-auto" src="/img/<%= food.image %>" alt="" />
+                          <div style="color: rgb(19, 31, 83); margin-top: 10px; font-weight: 700; font-size: 15px; " class="collection-item2">
+                            <a href="#"><%= food.name %></a>
+                          </div>
+                          
+                          <div id="food__Info" style="margin-left: 5px;" class="text-left mx-auto mt-1">
+                            <h3 style="color: rgb(189, 121, 135);" class="font-bold text-md uppercase ml-1"><%= food.size %></h3>
+                            <h5 style="color: rgb(190, 105, 122);" class="font-bold text-md ml-20">₹ <%= food.price %></h5>               
+                          </div>
+                          
+                          <div class="mt-2 mb-1">
+                            <button
+                                data-food="<%= JSON.stringify(food) %>"
+                                class="add-to-cart px-3 rounded-full font-bold"
+                                >  
+                                <span>+</span> <span class="ml-3">Add</span>
+                                </button>
+                          </div>
+                        </div>
+                      </div>
+                      <% }%>
+                      <% })%>
+                    </div>
+
+                <!-- Drinks -->
+                        
+                <h2 class="font-bold">Drinks</h2>
+                <div class="wrapper1" id="names3">  
+                  <% foods.forEach(function(food) { %> 
+                    <% if(food.id[food.id.length-1]=='f') { %> 
+                  <div class="item3">
+                    <div class="text-center" >
+                      <img class="h-14 w-20 mt-3 mx-auto" src="/img/<%= food.image %>" alt="" />
+                      <div style="color: rgb(19, 31, 83); margin-top: 10px; font-weight: 700; font-size: 15px; " class="collection-item3">
+                        <a href="#"><%= food.name %></a>
+                       </div>
+                      
+                      <div id="food__Info" style="margin-left: 5px;" class="text-left mx-auto mt-1">
+                        <h3 style="color: rgb(189, 121, 135);" class="font-bold text-md uppercase ml-1"><%= food.size %></h3>
+                        <h5 style="color: rgb(190, 105, 122);" class="font-bold text-md ml-20">₹ <%= food.price %></h5>               
+                      </div>
+                      
+                      <div class="mt-2 mb-1">
+                        <button
+                            data-food="<%= JSON.stringify(food) %>"
+                            class="add-to-cart px-3 rounded-full font-bold"
+                            >  
+                            <span>+</span> <span class="ml-3">Add</span>
+                            </button>
+                      </div>
+                    </div>
+                  </div>
+                  <% }%>
+                  <% })%>
+                </div>
+
+
+                <!-- Others -->
+                        
+                <h2 class="font-bold">Others</h2>
+                <div class="wrapper1" id="names4">  
+                  <% foods.forEach(function(food) { %> 
+                    <% if(food.id[food.id.length-1]=='2') { %> 
+                  <div class="item4">
+                    <div class="text-center" >
+                      <img class="h-14 w-20 mt-3 mx-auto" src="/img/<%= food.image %>" alt="" />
+                      <div style="color: rgb(19, 31, 83); margin-top: 10px; font-weight: 700; font-size: 15px; " class="collection-item4">
+                        <a href="#"><%= food.name %></a>
+                       </div>
+                      
+                      <div id="food__Info" style="margin-left: 5px;" class="text-left mx-auto mt-1">
+                        <h3 style="color: rgb(189, 121, 135);" class="font-bold text-md uppercase ml-1"><%= food.size %></h3>
+                        <h5 style="color: rgb(190, 105, 122);" class="font-bold text-md ml-20">₹ <%= food.price %></h5>               
+                      </div>
+                      
+                      <div class="mt-2 mb-1">
+                        <button
+                            data-food="<%= JSON.stringify(food) %>"
+                            class="add-to-cart px-3 rounded-full font-bold"
+                            >  
+                            <span>+</span> <span class="ml-3">Add</span>
+                            </button>
+                      </div>
+                    </div>
+                  </div>
+                  <% }%>
+                  <% })%>
+                </div>
+
+
             </div>
-          </div>
-        </div>
+        <a href="/menu" class="font-bold">View all food Items-></a>
+      </section>
 
-        <% })%>
-      </div>
-    </section>
+        <script>
+            
+        // Search For Pizza
+          //Get input Element
+          let filterInput1 = document.getElementById("filterInput");
+            //Add Event Listener
+            filterInput1.addEventListener("keyup",filterNames1);
+
+            function filterNames1(){
+        console.log(1);
+    
+        // Get Value Of input
+        let filterValue = document.getElementById("filterInput").value.toUpperCase();
+    
+        console.log(filterValue);
+    
+        
+            //Get Names ul
+            let ul1 = document.getElementById("names1");
+            
+            let lia = ul1.querySelectorAll("div.collection-item1");
+
+            let target1__Container = document.getElementById("names1");
+
+            let container1__Visibility = target1__Container.querySelectorAll("div.item1");
+
+            for(let i=0;i<lia.length;i++)
+            {
+              let a = lia[i].getElementsByTagName("a")[0];
+              // If Matched
+              if(a.innerHTML.toUpperCase().indexOf(filterValue)>-1)
+              {
+                lia[i].style.display = "";
+                container1__Visibility[i].style.display = "";
+              }
+              else{
+                lia[i].style.display = "none";
+                container1__Visibility[i].style.display = "none";   
+              }
+            }
+          }
+
+          // Search For Coffee
+          //Get input Element
+          let filterInput2 = document.getElementById("filterInput");
+            //Add Event Listener
+            filterInput2.addEventListener("keyup",filterNames2);
+
+            function filterNames2(){
+        console.log(2);
+    
+        // Get Value Of input
+        let filterValue = document.getElementById("filterInput").value.toUpperCase();
+    
+        console.log(filterValue);
+    
+        
+            //Get Names ul
+            let ul1 = document.getElementById("names2");
+            
+            let lia = ul1.querySelectorAll("div.collection-item2");
+
+            let target1__Container = document.getElementById("names2");
+
+            let container1__Visibility = target1__Container.querySelectorAll("div.item2");
+
+            for(let i=0;i<lia.length;i++)
+            {
+              let a = lia[i].getElementsByTagName("a")[0];
+              // If Matched
+              if(a.innerHTML.toUpperCase().indexOf(filterValue)>-1)
+              {
+                lia[i].style.display = "";
+                container1__Visibility[i].style.display = "";
+              }
+              else{
+                lia[i].style.display = "none";
+                container1__Visibility[i].style.display = "none";   
+              }
+            }
+          }
+
+          // Search For Drinks
+          //Get input Element
+          let filterInput3 = document.getElementById("filterInput");
+            //Add Event Listener
+            filterInput3.addEventListener("keyup",filterNames3);
+
+            function filterNames3(){
+        console.log(3);
+    
+        // Get Value Of input
+        let filterValue = document.getElementById("filterInput").value.toUpperCase();
+    
+        console.log(filterValue);
+    
+        
+            //Get Names ul
+            let ul1 = document.getElementById("names3");
+            
+            let lia = ul1.querySelectorAll("div.collection-item3");
+
+            let target1__Container = document.getElementById("names3");
+
+            let container1__Visibility = target1__Container.querySelectorAll("div.item3");
+
+            for(let i=0;i<lia.length;i++)
+            {
+              let a = lia[i].getElementsByTagName("a")[0];
+              // If Matched
+              if(a.innerHTML.toUpperCase().indexOf(filterValue)>-1)
+              {
+                lia[i].style.display = "";
+                container1__Visibility[i].style.display = "";
+              }
+              else{
+                lia[i].style.display = "none";
+                container1__Visibility[i].style.display = "none";   
+              }
+            }
+          }
+
+          // Search For Others
+          //Get input Element
+          let filterInput4 = document.getElementById("filterInput");
+            //Add Event Listener
+            filterInput4.addEventListener("keyup",filterNames4);
+
+            function filterNames4(){
+        console.log(4);
+    
+        // Get Value Of input
+        let filterValue = document.getElementById("filterInput").value.toUpperCase();
+    
+        console.log(filterValue);
+    
+        
+            //Get Names ul
+            let ul1 = document.getElementById("names4");
+            
+            let lia = ul1.querySelectorAll("div.collection-item4");
+
+            let target1__Container = document.getElementById("names4");
+
+            let container1__Visibility = target1__Container.querySelectorAll("div.item4");
+
+            for(let i=0;i<lia.length;i++)
+            {
+              let a = lia[i].getElementsByTagName("a")[0];
+              // If Matched
+              if(a.innerHTML.toUpperCase().indexOf(filterValue)>-1)
+              {
+                lia[i].style.display = "";
+                container1__Visibility[i].style.display = "";
+              }
+              else{
+                lia[i].style.display = "none";
+                container1__Visibility[i].style.display = "none";   
+              }
+            }
+          }
+
+
+          
+
+  
+        </script>
+
   </body>
 </html>
 
-<!-- <section class="hero px-12 py-12">
-  <div class="container mx-auto flex items-center justify-between">
-    <div class="w-1/2">
-      <h6 class="text-lg"><em>Are you hungry?</em></h6>
-      <h1 class="text-3xl md:text-6xl font-bold">Don't wait !</h1>
-      <button
-        class="px-6 py-2 rounded-full text-white font-bold mt-4 btn-primary"
-      >
-        Order Now
-      </button>
-    </div>
-    <div class="w-1/2">
-      <img src="/img/home.png" alt="" />
-    </div>
-  </div>
-</section> -->
