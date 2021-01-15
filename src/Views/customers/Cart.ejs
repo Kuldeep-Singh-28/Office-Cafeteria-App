@@ -18,8 +18,8 @@
         </div>
 
         <div class="main flex px-2">
-          <div class="left flex-1">
-            <div class="items-list">
+          <div class="left w-8/12 h-screen pr-12">
+            <div class="items-list h-4/6 overflow-auto">
               <% for(let food of Object.values(session.cart.items)) { %>
               <div class="flex justify-between items-center my-8">
                 <img class="w-24" src="/img/<%= food.item.image%>" alt="" />
@@ -34,8 +34,8 @@
             </div>
             <hr />
           </div>
-          <div class="right flex-2">
-            <div class="text-right py-4">
+          <div class="right flex-1">
+            <div class="text-center py-4">
               <div class="">
                 <span class="text-lg font-bold">Total Amount:</span>
                 <span class="amount text-2xl font-bold ml-4"
@@ -44,14 +44,14 @@
               </div>
               <% if(user) { %>
 
-              <div class="">
+              <div class="text-center">
                 <form
                   action="/orders"
                   method="POST"
                   class="mt-12"
                   id="payment-form"
                 >
-                  <div class="relative w-1/2 ml-auto mb-4">
+                  <div class="relative m-auto w-3/4 mb-4">
                     <select
                       id="paymentType"
                       name="paymentType"
@@ -76,13 +76,13 @@
                   </div>
                   <input
                     name="phone"
-                    class="border border-gray-400 p-2 w-1/2 mb-4 rounded-md"
+                    class="border border-gray-400 p-2 w-3/4 mb-4 rounded-md"
                     type="tel"
                     placeholder="Phone number"
                   />
                   <input
                     name="address"
-                    class="border border-gray-400 p-2 w-1/2 rounded-md"
+                    class="border border-gray-400 p-2 w-3/4 rounded-md"
                     type="text"
                     placeholder="Address"
                   />
