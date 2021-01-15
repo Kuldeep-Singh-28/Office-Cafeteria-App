@@ -1,4 +1,17 @@
 <!--========== HOME ==========-->
+<!--Deepika======start==========-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <link
+    href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+    rel="stylesheet"
+  />
+  <body>
+    <!--Deepika======end==========-->
 <section class="home" id="home">
   <div class="home__container bd-container bd-grid">
     <div class="home__data">
@@ -436,8 +449,116 @@
       </p>
     </div>
 
-    <div class="contact__button">
-      <a href="#" class="button">Contact us now</a>
-    </div>
-  </div>
-</section>
+  <!--Deepika======start==========-->
+        <button class="button" onclick="toggleModal('modal-id')">
+          Contact us now
+        </button>
+
+        <div
+          class="hidden overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center"
+          id="modal-id"
+        >
+          <div class="relative w-full my-6 mx-auto max-w-3xl">
+            <!--content-->
+            <div
+              class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none"
+            >
+              <div
+                class="flex items-start justify-between p-5 border-b border-solid border-gray-300 rounded-t"
+              >
+                <div class="flex-1 py-1"><h3 class="text-lg font-semibold">Contact Us</h3></div>
+                <div class="flex-1 py-1"><button
+                  class="ml-auto bg-transparent border-0 text-black float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
+                  onclick="toggleModal('modal-id')"
+                >
+                  <span
+                    class="bg-transparent text-black h-6 w-6 text-2xl block outline-none focus:outline-none"
+                  >
+                    x
+                  </span>
+                </button></div>
+              </div>
+              <form id="formElem" action="/contact_us" method="POST">
+                <div class="relative p-6 flex-auto">
+                  <div class="mb-4">
+                    <label
+                      class="block text-gray-700 text-sm text-left font-bold mb-2"
+                      for="username"
+                    >
+                      Name
+                    </label>
+                    <input
+                      name="name"
+                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="name"
+                      type="text"
+                      placeholder="Enter your name"
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label
+                      class="block text-gray-700 text-sm text-left font-bold mb-2"
+                      for="username"
+                    >
+                      Email
+                    </label>
+                    <input
+                      name="email"
+                      class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="username"
+                      type="email"
+                      placeholder="Enter your email"
+                      required
+                    />
+                  </div>
+                  <div class="mb-4">
+                    <label
+                      class="block text-gray-700 text-sm text-left font-bold mb-2"
+                      for="username"
+                    >
+                      Message
+                    </label>
+                    <textarea
+                      name="message"
+                      class="shadow appearance-none border rounded w-full h-24 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      id="username"
+                      placeholder="Type your message here..."
+                    ></textarea>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-end p-6 py-1 border-t border-solid border-gray-300 rounded-b"
+                >
+                  <button type="submit" class="button" id="submitButton">
+                    Send
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div
+          class="hidden opacity-25 fixed inset-0 z-40 bg-black"
+          id="modal-id-backdrop"
+        ></div>
+      </div>
+      <!--Deepika======end==========-->
+      </div>
+    </section>
+    <!--Deepika======start==========-->
+    <script>
+      function toggleModal(modalID) {
+        event.preventDefault();
+        document.getElementById(modalID).classList.toggle("hidden");
+        document
+          .getElementById(modalID + "-backdrop")
+          .classList.toggle("hidden");
+        document.getElementById(modalID).classList.toggle("flex");
+        document.getElementById(modalID + "-backdrop").classList.toggle("flex");
+      }
+    </script>
+  </body>
+</html>
+<!--Deepika======end==========-->
+ 
+
