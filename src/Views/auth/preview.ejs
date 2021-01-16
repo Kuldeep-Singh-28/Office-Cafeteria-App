@@ -1,3 +1,4 @@
+<!---------deepali starts---------------->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,40 +13,43 @@
     <section class="login flex items-center justify-center pt-24">
       <div class="w-full max-w-xs">
         <form
-          action="/register"
+          action="/preview"
           method="POST"
-          enctype="multipart/form-data"
           class="shadow-lg bg-white dark:bg-gray-800 rounded px-8 pt-6 pb-8 mb-4"
         >
           <% if(messages.error) { %>
           <span class="text-red-500 text-sm"><%= messages.error%></span>
-          <% }%>
-          <!--deepali starts-->
+          <% } %>
+          <!--displaying id card image-->
+          <div>
+            <img src="/uploads/<%= image %>" alt="id card" />
+          </div>
           <div class="mb-4">
             <label class="block text-sm font-bold mb-2" for="username">
               Employee Id
             </label>
             <input
               name="employee_id"
-              value="<%=messages.employee_id%>"
+              value="<%=employee_id%>"
               class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
               id="username"
               type="text"
-              placeholder="Enter your employee id"
+              readonly="readonly"
+              ;
             />
           </div>
-          <!--deepali ends-->
           <div class="mb-4">
             <label class="block text-sm font-bold mb-2" for="username">
               Name
             </label>
             <input
               name="name"
-              value="<%=messages.name%>"
+              value="<%= name%>"
               class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
               id="username"
               type="text"
-              placeholder="Enter your name"
+              readonly="readonly"
+              ;
             />
           </div>
           <div class="mb-4">
@@ -54,25 +58,26 @@
             </label>
             <input
               name="email"
-              value="<%=messages.email%>"
+              value="<%= email%>"
               class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="username"
               type="email"
-              placeholder="Enter your email"
+              readonly="readonly"
+              ;
             />
           </div>
-          <!--deepali starts-->
           <div class="mb-4">
             <label class="block text-sm font-bold mb-2" for="username">
               Organization Name
             </label>
             <input
               name="organization_name"
-              value="<%=messages.organization_name%>"
+              value="<%= organization_name%>"
               class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
               id="username"
               type="text"
-              placeholder="Enter your organization name"
+              readonly="readonly"
+              ;
             />
           </div>
           <div class="mb-4">
@@ -81,53 +86,14 @@
             </label>
             <input
               name="mobile_no"
-              value="<%=messages.mobile_no%>"
+              value="<%= mobile_no%>"
               class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
               id="username"
               type="text"
-              placeholder="Enter your mobile no"
+              readonly="readonly"
+              ;
             />
           </div>
-          <!--deepali ends-->
-          <div class="mb-4">
-            <label class="block text-sm font-bold mb-2" for="password">
-              Password
-            </label>
-            <input
-              name="password"
-              class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="password"
-              required
-              type="password"
-              placeholder="******************"
-            />
-          </div>
-          <!--deepali starts-->
-          <div class="mb-4">
-            <label class="block text-sm font-bold mb-2" for="password">
-              Confirm Password
-            </label>
-            <input
-              name="confirmpassword"
-              class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="password"
-              type="password"
-              placeholder="******************"
-            />
-          </div>
-          <div class="mb-4">
-            <label class="block text-sm font-bold mb-2" for="image">
-              Id Card image
-            </label>
-            <input
-              name="file"
-              class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
-              type="file"
-              required
-            />
-          </div>
-          <!--deepali ends-->
           <div class="flex items-center justify-between">
             <button
               class="btn-primary rounded-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -137,9 +103,9 @@
             </button>
             <a
               class="inline-block align-baseline font-bold text-sm"
-              href="/login"
+              href="/register"
             >
-              Already have account?
+              Back
             </a>
           </div>
         </form>
@@ -150,3 +116,4 @@
     </section>
   </body>
 </html>
+<!---------deepali ends------------------>

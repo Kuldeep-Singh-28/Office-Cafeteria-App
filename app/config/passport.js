@@ -5,11 +5,13 @@ const bcrypt = require("bcrypt");
 function init(passport) {
   passport.use(
     new LocalStrategy(
-      { usernameField: "email" },
-      async (email, password, done) => {
+      //---------------deepali starts------------
+      { usernameField: "employee_id" },
+      //---------------deepali ends---------------
+      async (employee_id, password, done) => {
         // Login
         // check if email exists
-        const user = await User.findOne({ email: email });
+        const user = await User.findOne({ employee_id: employee_id });
         if (!user) {
           return done(null, false, { message: "No user exists!!" });
         }
@@ -39,6 +41,5 @@ function init(passport) {
     });
   });
 }
-
 
 module.exports = init;

@@ -30,8 +30,8 @@
 
 <h1>extra work </h1>
 
-[-] add filter functionality in menu
-[-] add preview screen during the new register
+[+] add filter functionality in menu
+[+] add preview screen during the new register
 [-] add offers page
-[-] add more items in menus database
-[-] add links to home
+[+] add more items in menus database
+[+] add links to home

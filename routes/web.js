@@ -9,6 +9,10 @@ const statusController = require("../app/http/controllers/admin/statusController
 const guest = require("../app/http/middleware/guest");
 const auth = require("../app/http/middleware/auth");
 const admin = require("../app/http/middleware/admin");
+//------deepali starts--------
+var myModule = require("../app/http/middleware/upload");
+var upload = myModule.upload;
+//------deepali ends---------
 
 const initRoutes = (app) => {
   // routes
@@ -21,7 +25,12 @@ const initRoutes = (app) => {
   app.get("/login", guest, authController().login);
   app.post("/login", authController().postLogin);
   app.get("/register", guest, authController().register);
-  app.post("/register", authController().postRegister);
+  //----deepali starts--------------
+  app.post("/register", upload, authController().postRegister);
+  app.get("/preview", guest, authController().preview);
+  app.post("/preview", authController().postPreview);
+  app.get("/success", guest, authController().success);
+  //----------deepali ends------------
   app.post("/logout", authController().logout);
 
   //  cart
