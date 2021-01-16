@@ -1,6 +1,18 @@
 const User = require("../../models/user");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
+//--------deepali starts------
+//global variables
+let employee_id;
+let name;
+let email;
+let organization_name;
+let mobile_no;
+let password;
+let confirmpassword;
+let image;
+let id = "";
+//-------deepali ends---------
 
 const authController = () => {
   const _getRedirectUrl = (req) => {
@@ -12,9 +24,10 @@ const authController = () => {
       res.render("auth/login");
     },
     postLogin: (req, res, next) => {
-      const { email, password } = req.body;
+      employee_id = req.body.employee_id;
+      password = req.body.password;
       // Validate request
-      if (!email || !password) {
+      if (!employee_id || !password) {
         req.flash("error", "All fields are required");
         return res.redirect("/login");
       }
@@ -38,55 +51,119 @@ const authController = () => {
       })(req, res, next);
     },
 
+    //----------deepali starts--------
     register: (req, res) => {
-      res.render("auth/register");
+      req.flash("employee_id", employee_id);
+      req.flash("name", name);
+      req.flash("email", email);
+      req.flash("organization_name", organization_name);
+      req.flash("mobile_no", mobile_no);
+      return res.render("auth/register");
     },
-
     // postRegister: (req, res) => {
     async postRegister(req, res) {
-      const { name, email, password } = req.body;
       // Validate request
-      if (!name || !email || !password) {
+
+      image = req.file.filename;
+      employee_id = req.body.employee_id;
+      name = req.body.name;
+      email = req.body.email;
+      organization_name = req.body.organization_name;
+      mobile_no = req.body.mobile_no;
+      password = req.body.password;
+      confirmpassword = req.body.confirmpassword;
+      if (
+        !employee_id ||
+        !name ||
+        !email ||
+        !organization_name ||
+        !mobile_no ||
+        !password ||
+        !confirmpassword ||
+        !image
+      ) {
         req.flash("error", "All fields are required");
-        req.flash("name", name);
-        req.flash("email", email);
+        return res.redirect("/register");
+      }
+      // Check if mobile no is of 10 digits
+      if (mobile_no.length != 10) {
+        req.flash("error", "Mobile number is not of 10 digits");
+        return res.redirect("/register");
+      }
+      //Check if confirm password is same as password or not
+      if (confirmpassword != password) {
+        req.flash("error", "Confirm password is not same as password");
         return res.redirect("/register");
       }
 
-      // Check if email exists
-      User.exists({ email: email }, (err, result) => {
-        if (result) {
-          req.flash("error", "Email already taken");
-          req.flash("name", name);
-          req.flash("email", email);
-          return res.redirect("/register");
-        }
+      // Check if employee id or email exists
+      const user = await User.findOne({
+        $or: [{ employee_id: employee_id }, { email: email }],
       });
+      if (user) {
+        req.flash("error", "User already exists");
+        return res.redirect("/register");
+      }
+      return res.redirect("/preview");
+    },
 
+    preview: (req, res) => {
+      return res.render("auth/preview", {
+        image,
+        employee_id,
+        name,
+        email,
+        organization_name,
+        mobile_no,
+      });
+    },
+
+    async postPreview(req, res) {
       // Hash password
       const hashedPassword = await bcrypt.hash(password, 10);
       // Create a user
       const user = new User({
+        employee_id,
         name,
+        organization_name,
         email,
+        mobile_no,
         password: hashedPassword,
+        image,
       });
 
       user
         .save()
         .then((user) => {
           // Login
-          return res.redirect("/login");
+          id = user.id;
+          employee_id = "";
+          name = "";
+          email = "";
+          organization_name = "";
+          mobile_no = "";
+          password = "";
+          confirmpassword = "";
+          image = "";
+          return res.redirect("/success");
         })
         .catch((err) => {
           req.flash("error", "Something went wrong");
-          return res.redirect("/register");
+          return res.redirect("/preview");
         });
     },
+
+    success: (req, res) => {
+      return res.render("auth/success", { id });
+    },
+
     logout(req, res) {
+      employee_id = "";
+      password = "";
       req.logout();
       return res.redirect("/login");
     },
+    //----------deepali ends-------
   };
 };
 
