@@ -49,7 +49,7 @@
               </div>
               <% if(user) { %>
 
-              <div class="text-center">
+              <div class="text-green-700 text-center">
                 <form
                   action="/orders"
                   method="POST"
@@ -121,12 +121,12 @@
       <div class="empty-cart py-16">
         <div class="container mx-auto text-center">
           <h1 class="text-3xl font-bold mb-2">Cart Empty 😕</h1>
-          <p class="text-gray-500 text-lg mb-12">
+          <p class="text-gray-500 text-sm md:text-lg mb-12">
             You probably haven't ordered anything yet. <br />
             To order the stuff, go to the main page.
           </p>
           <img
-            class="w-1/5 mx-auto"
+            class="w-1/2 md:w-1/5 mx-auto"
             src="/img/empty-cart.png"
             alt="empty-cart"
           />

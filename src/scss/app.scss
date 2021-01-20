@@ -635,6 +635,23 @@ a.link {
   }
 }
 
+@media (max-width: 1022px) and (max-width: 1560px) {
+  .container {
+    max-width: 90%;
+  }
+  table {
+    color: #1d2521;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .status-box ul li span:before {
+    font-size: 34px;
+  }
+}
 // Order status section
 section.status {
   background: $secondary;
@@ -740,7 +757,7 @@ section.status {
 .status-box ul li small {
   float: right;
   font-size: 14px;
-  margin-top: 8px;
+  // margin-top: 8px;
 }
 
 // *********STRIPE********
