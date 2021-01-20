@@ -24,7 +24,7 @@
 [+] Create Orders single page with status
 [+] Order tracker // confirme order, out for delivery...
 [+] Socket connection - dependancies socket.io
-[-] Create mode of payment
+[+] Create mode of payment
 [-] Build project for deployment
 [-] Deploy project on live server
 
@@ -32,6 +32,5 @@
 
 [+] add filter functionality in menu
 [+] add preview screen during the new register
-[-] add offers page
 [+] add more items in menus database
 [+] add links to home

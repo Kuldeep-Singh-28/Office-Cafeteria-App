@@ -1,7 +1,7 @@
 const User = require("../../models/user");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
-//--------deepali starts------
+
 //global variables
 let employee_id;
 let name;
@@ -12,7 +12,6 @@ let password;
 let confirmpassword;
 let image;
 let id = "";
-//-------deepali ends---------
 
 const authController = () => {
   const _getRedirectUrl = (req) => {
@@ -51,7 +50,6 @@ const authController = () => {
       })(req, res, next);
     },
 
-    //----------deepali starts--------
     register: (req, res) => {
       req.flash("employee_id", employee_id);
       req.flash("name", name);
@@ -163,7 +161,6 @@ const authController = () => {
       req.logout();
       return res.redirect("/login");
     },
-    //----------deepali ends-------
   };
 };
 

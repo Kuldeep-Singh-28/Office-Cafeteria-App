@@ -17,17 +17,22 @@
           <h1 class="font-bold text-2xl ml-4">Order summary</h1>
         </div>
 
-        <div class="main flex px-2">
-          <div class="left w-8/12 h-screen pr-12">
-            <div class="items-list h-4/6 pr-4 overflow-auto">
+        <div class="main flex flex-col md:flex-row px-2">
+          <div class="left w-full md:w-8/12 md:h-screen md:pr-12">
+            <div
+              class="items-list h-96 md:h-3/4 pr-4 overflow-auto md:overflow-none"
+            >
               <% for(let food of Object.values(session.cart.items)) { %>
               <div class="flex justify-between items-center my-8">
                 <img class="w-24" src="/img/<%= food.item.image%>" alt="" />
                 <div class="flex-1 ml-4">
-                  <h1><%= food.item.name%></h1>
+                  <h1 class="font-bold"><%= food.item.name%></h1>
                   <span><%= food.item.size%></span>
+                  <p class="flex-1 font-semibold sm:hidden">
+                    Pcs <%= food.qty%>
+                  </p>
                 </div>
-                <span class="flex-1">Pcs <%= food.qty%></span>
+                <span class="hidden md:inline flex-1">Pcs <%= food.qty%></span>
                 <span class="font-bold text-lg">Rs. <%= food.item.price%></span>
               </div>
               <% } %>
@@ -35,7 +40,7 @@
             <hr />
           </div>
           <div class="right flex-1">
-            <div class="text-center py-4">
+            <div class="text-center relative md:static py-4">
               <div class="">
                 <span class="text-lg font-bold">Total Amount:</span>
                 <span class="amount text-2xl font-bold ml-4"

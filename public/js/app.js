@@ -2264,25 +2264,26 @@ navLink.forEach(function (n) {
   return n.addEventListener("click", linkAction);
 });
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
+// const sections = document.querySelectorAll("section[id]");
+// function scrollActive() {
+//   const scrollY = window.pageYOffset;
+//   sections.forEach((current) => {
+//     const sectionHeight = current.offsetHeight;
+//     const sectionTop = current.offsetTop - 40;
+//     sectionId = current.getAttribute("id");
+//     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+//       document
+//         .querySelector(".nav__menu a[href*=" + sectionId + "]")
+//         .classList.add("active-link");
+//     } else {
+//       document
+//         .querySelector(".nav__menu a[href*=" + sectionId + "]")
+//         .classList.remove("active-link");
+//     }
+//   });
+// }
+// window.addEventListener("scroll", scrollActive);
 
-var sections = document.querySelectorAll("section[id]");
-
-function scrollActive() {
-  var scrollY = window.pageYOffset;
-  sections.forEach(function (current) {
-    var sectionHeight = current.offsetHeight;
-    var sectionTop = current.offsetTop - 40;
-    sectionId = current.getAttribute("id");
-
-    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-      document.querySelector(".nav__menu a[href*=" + sectionId + "]").classList.add("active-link");
-    } else {
-      document.querySelector(".nav__menu a[href*=" + sectionId + "]").classList.remove("active-link");
-    }
-  });
-}
-
-window.addEventListener("scroll", scrollActive);
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 
 function scrollHeader() {
@@ -24931,7 +24932,7 @@ var NotyButton = exports.NotyButton = function NotyButton(html, classes, cb) {
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports, __nested_webpack_require_23069__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 

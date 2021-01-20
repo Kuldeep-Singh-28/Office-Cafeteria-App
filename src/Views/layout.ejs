@@ -1,95 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cafeteria - Are you hungry?</title>
-    <link rel="stylesheet" href="/css/app.css" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <!--========== BOX ICONS ==========-->
-    <link
-      rel="stylesheet"
-      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <!--========== SCROLL TOP ==========-->
-    <a href="#" class="scrolltop" id="scroll-top">
-      <i class="bx bx-chevron-up scrolltop__icon"></i>
-    </a>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cafeteria - Are you hungry?</title>
+  <link rel="stylesheet" href="/css/app.css" />
 
-    <!--========== HEADER ==========-->
-    <header class="l-header" id="header">
-      <nav class="nav bd-container">
-        <a href="/" class="nav__logo"
-          ><img width="70px" src="/img/logo.png" alt="logo.png"
-        /></a>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+  <!--========== BOX ICONS ==========-->
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+</head>
 
-        <div class="nav__menu" id="nav-menu">
-          <ul class="nav__list">
-            <li class="nav__item">
-              <a href="/" class="nav__link active-link">Home</a>
-            </li>
-            <li class="nav__item">
-              <a href="/menu" class="nav__link active-link">Menu</a>
-            </li>
-            <li class="nav__item">
-              <a href="#services" class="nav__link active-link">Offers</a>
-            </li>
-            <% if(user) { %>
-            <li class="nav__item">
-              <form id="logout" action="/logout" method="POST">
-                <a
-                  class="nav__link active-link"
-                  onclick="document.getElementById('logout').submit()"
-                  href="#"
-                  >Logout</a
-                >
-              </form>
-            </li>
-            <% } else { %>
-            <li class="nav__item">
-              <a class="nav__link active-link" href="/register">Register</a>
-            </li>
-            <li class="nav__item">
-              <a class="nav__link active-link" href="/login">Login</a>
-            </li>
-            <% } %>
-            <li class="nav__cart nav__item">
-              <a
-                href="/cart"
-                class="shopping__cart nav__link active-link rounded-full flex items-center"
-              >
-                <span id="cartCounter" class="font-bold"
-                  ><%= session.cart ? session.cart.totalQty : '' %></span
-                >
-                <img
-                  class="nav__link active-link"
-                  src="/img/cart1.png"
-                  alt="cart.png"
-                />
-              </a>
-            </li>
+<body>
+  <!--========== SCROLL TOP ==========-->
+  <a href="#" class="scrolltop" id="scroll-top">
+    <i class="bx bx-chevron-up scrolltop__icon"></i>
+  </a>
 
-            <li><i class="bx bx-moon change-theme" id="theme-button"></i></li>
-          </ul>
-        </div>
+  <!--========== HEADER ==========-->
+  <header class="l-header" id="header">
+    <nav class="nav bd-container">
+      <a href="/" class="nav__logo"><img width="70px" src="/img/logo.png" alt="logo.png" /></a>
 
-        <div class="nav__toggle" id="nav-toggle">
-          <i class="bx bx-menu"></i>
-        </div>
-      </nav>
-    </header>
+      <div class="nav__menu" id="nav-menu">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="/" class="nav__link active-link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="/menu" class="nav__link active-link">Menu</a>
+          </li>
+          <% if(user) { %>
+            <% if(user==='admin' ) { %>
+              <li class="nav__item">
+                <a href="admin/orders" class="nav__link active-link">Orders</a>
+              </li>
 
-    <!-- ========== HEADER ==========
+              <% } else { %>
+                <li class="nav__item">
+                  <a href="customer/orders" class="nav__link active-link">Orders</a>
+                </li>
+
+                <% } %>
+                  <li class="nav__item">
+                    <form id="logout" action="/logout" method="POST">
+                      <a class="nav__link active-link" onclick="document.getElementById('logout').submit()"
+                        href="#">Logout</a>
+                    </form>
+                  </li>
+                  <% } else { %>
+                    <li class="nav__item">
+                      <a class="nav__link active-link" href="/register">Register</a>
+                    </li>
+                    <li class="nav__item">
+                      <a class="nav__link active-link" href="/login">Login</a>
+                    </li>
+                    <% } %>
+                      <li class="nav__cart nav__item">
+                        <a href="/cart" class="shopping__cart nav__link active-link rounded-full flex items-center">
+                          <span id="cartCounter" class="font-bold">
+                            <%= session.cart ? session.cart.totalQty : '' %>
+                          </span>
+                          <img class="nav__link active-link" src="/img/cart1.png" alt="cart.png" />
+                        </a>
+                      </li>
+
+                      <li><i class="bx bx-moon change-theme" id="theme-button"></i></li>
+        </ul>
+      </div>
+
+      <div class="nav__toggle" id="nav-toggle">
+        <i class="bx bx-menu"></i>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========== HEADER ==========
 
     <nav class="container px-8 mx-auto flex items-center justify-between py-4">
       <div class="">
@@ -127,9 +116,9 @@
       </div>
     </nav> -->
 
-    <main class="l-main">
-      <!--========== HOME ==========-->
-      <%- body %>
+  <main class="l-main"></main>
+  <!--========== HOME ==========-->
+  <%- body %>
     </main>
 
     <!--========== FOOTER ==========-->
@@ -139,15 +128,10 @@
           <a href="#" class="footer__logo">Cafeteria Food</a>
           <span class="footer__description">Alpha-Dev company</span>
           <div>
-            <a href="#" class="footer__social"
-              ><i class="bx bxl-facebook"></i
-            ></a>
-            <a href="#" class="footer__social"
-              ><i class="bx bxl-instagram"></i
-            ></a>
-            <a href="#" class="footer__social"
-              ><i class="bx bxl-twitter"></i
-            ></a>
+            <a href="#" class="footer__social"><i class="bx bxl-facebook"></i></a>
+            <a href="https://www.linkedin.com/in/kuldeepsiingh/" target="_blank" class="footer__social"><i
+                class="bx bxl-linkedin"></i></a>
+            <a href="#" class="footer__social"><i class="bx bxl-twitter"></i></a>
           </div>
         </div>
 
@@ -191,5 +175,6 @@
     <script defer src="/js/app.js"></script>
     <!--========== SCROLL REVEAL ==========-->
     <script src="https://unpkg.com/scrollreveal"></script>
-  </body>
+</body>
+
 </html>
