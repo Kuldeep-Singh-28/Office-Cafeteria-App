@@ -9,7 +9,9 @@
     rel="stylesheet"
   />
   <body>
-    <section class="login flex items-center justify-center pt-24">
+    <section
+      class="login flex text-green-700 items-center justify-center pt-24"
+    >
       <div class="w-full max-w-xs">
         <form
           action="/register"
@@ -20,7 +22,6 @@
           <% if(messages.error) { %>
           <span class="text-red-500 text-sm"><%= messages.error%></span>
           <% }%>
-          <!--deepali starts-->
           <div class="mb-4">
             <label class="block text-sm font-bold mb-2" for="username">
               Employee Id
@@ -34,7 +35,6 @@
               placeholder="Enter your employee id"
             />
           </div>
-          <!--deepali ends-->
           <div class="mb-4">
             <label class="block text-sm font-bold mb-2" for="username">
               Name
@@ -61,7 +61,6 @@
               placeholder="Enter your email"
             />
           </div>
-          <!--deepali starts-->
           <div class="mb-4">
             <label class="block text-sm font-bold mb-2" for="username">
               Organization Name
@@ -74,73 +73,6 @@
               type="text"
               placeholder="Enter your organization name"
             />
-          </div>
-          <div class="mb-4">
-            <label class="block text-sm font-bold mb-2" for="username">
-              Mobile No
-            </label>
-            <input
-              name="mobile_no"
-              value="<%=messages.mobile_no%>"
-              class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
-              type="text"
-              placeholder="Enter your mobile no"
-            />
-          </div>
-          <!--deepali ends-->
-          <div class="mb-4">
-            <label class="block text-sm font-bold mb-2" for="password">
-              Password
-            </label>
-            <input
-              name="password"
-              class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="password"
-              required
-              type="password"
-              placeholder="******************"
-            />
-          </div>
-          <!--deepali starts-->
-          <div class="mb-4">
-            <label class="block text-sm font-bold mb-2" for="password">
-              Confirm Password
-            </label>
-            <input
-              name="confirmpassword"
-              class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="password"
-              type="password"
-              placeholder="******************"
-            />
-          </div>
-          <div class="mb-4">
-            <label class="block text-sm font-bold mb-2" for="image">
-              Id Card image
-            </label>
-            <input
-              name="file"
-              class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
-              type="file"
-              required
-            />
-          </div>
-          <!--deepali ends-->
-          <div class="flex items-center justify-between">
-            <button
-              class="btn-primary rounded-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="submit"
-            >
-              Register
-            </button>
-            <a
-              class="inline-block align-baseline font-bold text-sm"
-              href="/login"
-            >
-              Already have account?
-            </a>
           </div>
         </form>
         <p class="text-center text-gray-500 text-xs">

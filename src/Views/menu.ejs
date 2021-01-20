@@ -13,10 +13,12 @@
   />
 
   <body>
-    <section class="menu container px-12 mx-12 mx-auto mt-12 py-8">
+    <section
+      class="menu px-2 mx-4 md:px-8 xl:px-12 md:mx-8 xl:mx-12 mx-auto mt-12 md:py-8"
+    >
       <!-- Heading   -->
       <div class="container mb-3">
-        <a href="/menu" class="text-xl font-bold">All Varieties</a>
+        <a href="/menu" class="text-xl font-bold md:text-2xl">All Varieties</a>
       </div>
 
       <!-- Search -->
@@ -38,58 +40,34 @@
       <hr />
 
       <!-- Varieties -->
-      <div class="container mt-16">
+      <div class="mt-16">
         <!-- Pizza -->
 
-        <h2 class="font-bold">Pizza</h2>
+        <h2 class="font-semibold mb-4 border-b md:text-2xl">Pizza</h2>
         <div class="wrapper1" id="names1">
           <% foods.forEach(function(food) { %> <%
-          if(food.id[food.id.length-1]=='e') { %>
+          if(food.id[food.id.length-1]=='e' ) { %>
           <div class="item1">
-            <div class="text-center">
+            <div class="w-full xs:w-4/5 md:w-64">
               <img
-                class="h-14 w-20 mt-3 mx-auto"
+                class="h-40 mb-4 mx-auto"
                 src="/img/<%= food.image %>"
                 alt=""
               />
-              <div
-                style="
-                  color: rgb(19, 31, 83);
-                  margin-top: 10px;
-                  font-weight: 700;
-                  font-size: 15px;
-                "
-                class="collection-item1"
-              >
-                <a href="#"><%= food.name %></a>
-              </div>
-
-              <div
-                id="food__Info"
-                style="margin-left: 5px"
-                class="text-left mx-auto mt-1"
-              >
-                <h3
-                  style="color: rgb(189, 121, 135)"
-                  class="font-bold text-md uppercase ml-1"
+              <div class="text-center mb-4">
+                <h2 class="mb-4 text-lg"><%= food.name %></h2>
+                <span class="size py-1 px-4 rounded-full uppercase text-xs"
+                  ><%= food.size %></span
                 >
-                  <%= food.size %>
-                </h3>
-                <h5
-                  style="color: rgb(190, 105, 122)"
-                  class="font-bold text-md ml-20"
-                >
-                  ₹ <%= food.price %>
-                </h5>
-              </div>
-
-              <div class="mt-2 mb-1">
-                <button
-                  data-food="<%= JSON.stringify(food) %>"
-                  class="add-to-cart px-3 rounded-full font-bold"
-                >
-                  <span>+</span> <span class="ml-3">Add</span>
-                </button>
+                <div class="flex items-center justify-around mt-6 px-2">
+                  <span class="font-bold text-lg">₹ <%= food.price %></span>
+                  <button
+                    data-food="<%= JSON.stringify(food) %>"
+                    class="add-to-cart py-1 px-5 rounded-full font-bold"
+                  >
+                    <span>+</span> <span class="ml-4">Add</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -98,55 +76,31 @@
 
         <!-- Coffee -->
 
-        <h2 class="font-bold">Coffee</h2>
+        <h2 class="font-semibold mb-4 border-b md:text-2xl">Coffee</h2>
         <div class="wrapper1" id="names2">
           <% foods.forEach(function(food) { %> <%
-          if(food.id[food.id.length-1]=='d') { %>
+          if(food.id[food.id.length-1]=='d' ) { %>
           <div class="item2">
-            <div class="text-center">
+            <div class="w-full xs:w-4/5 md:w-64">
               <img
-                class="h-14 w-20 mt-3 mx-auto"
+                class="h-40 mb-4 mx-auto"
                 src="/img/<%= food.image %>"
                 alt=""
               />
-              <div
-                style="
-                  color: rgb(19, 31, 83);
-                  margin-top: 10px;
-                  font-weight: 700;
-                  font-size: 15px;
-                "
-                class="collection-item2"
-              >
-                <a href="#"><%= food.name %></a>
-              </div>
-
-              <div
-                id="food__Info"
-                style="margin-left: 5px"
-                class="text-left mx-auto mt-1"
-              >
-                <h3
-                  style="color: rgb(189, 121, 135)"
-                  class="font-bold text-md uppercase ml-1"
+              <div class="text-center mb-4">
+                <h2 class="mb-4 text-lg"><%= food.name %></h2>
+                <span class="size py-1 px-4 rounded-full uppercase text-xs"
+                  ><%= food.size %></span
                 >
-                  <%= food.size %>
-                </h3>
-                <h5
-                  style="color: rgb(190, 105, 122)"
-                  class="font-bold text-md ml-20"
-                >
-                  ₹ <%= food.price %>
-                </h5>
-              </div>
-
-              <div class="mt-2 mb-1">
-                <button
-                  data-food="<%= JSON.stringify(food) %>"
-                  class="add-to-cart px-3 rounded-full font-bold"
-                >
-                  <span>+</span> <span class="ml-3">Add</span>
-                </button>
+                <div class="flex items-center justify-around mt-6 px-2">
+                  <span class="font-bold text-lg">₹ <%= food.price %></span>
+                  <button
+                    data-food="<%= JSON.stringify(food) %>"
+                    class="add-to-cart py-1 px-5 rounded-full font-bold"
+                  >
+                    <span>+</span> <span class="ml-4">Add</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -155,55 +109,31 @@
 
         <!-- Drinks -->
 
-        <h2 class="font-bold">Drinks</h2>
+        <h2 class="font-semibold mb-4 border-b md:text-2xl">Drinks</h2>
         <div class="wrapper1" id="names3">
           <% foods.forEach(function(food) { %> <%
-          if(food.id[food.id.length-1]=='f') { %>
+          if(food.id[food.id.length-1]=='f' ) { %>
           <div class="item3">
-            <div class="text-center">
+            <div class="w-full xs:w-4/5 md:w-64">
               <img
-                class="h-14 w-20 mt-3 mx-auto"
+                class="h-40 mb-4 mx-auto"
                 src="/img/<%= food.image %>"
                 alt=""
               />
-              <div
-                style="
-                  color: rgb(19, 31, 83);
-                  margin-top: 10px;
-                  font-weight: 700;
-                  font-size: 15px;
-                "
-                class="collection-item3"
-              >
-                <a href="#"><%= food.name %></a>
-              </div>
-
-              <div
-                id="food__Info"
-                style="margin-left: 5px"
-                class="text-left mx-auto mt-1"
-              >
-                <h3
-                  style="color: rgb(189, 121, 135)"
-                  class="font-bold text-md uppercase ml-1"
+              <div class="text-center mb-4">
+                <h2 class="mb-4 text-lg"><%= food.name %></h2>
+                <span class="size py-1 px-4 rounded-full uppercase text-xs"
+                  ><%= food.size %></span
                 >
-                  <%= food.size %>
-                </h3>
-                <h5
-                  style="color: rgb(190, 105, 122)"
-                  class="font-bold text-md ml-20"
-                >
-                  ₹ <%= food.price %>
-                </h5>
-              </div>
-
-              <div class="mt-2 mb-1">
-                <button
-                  data-food="<%= JSON.stringify(food) %>"
-                  class="add-to-cart px-3 rounded-full font-bold"
-                >
-                  <span>+</span> <span class="ml-3">Add</span>
-                </button>
+                <div class="flex items-center justify-around mt-6 px-2">
+                  <span class="font-bold text-lg">₹ <%= food.price %></span>
+                  <button
+                    data-food="<%= JSON.stringify(food) %>"
+                    class="add-to-cart py-1 px-5 rounded-full font-bold"
+                  >
+                    <span>+</span> <span class="ml-4">Add</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -212,62 +142,38 @@
 
         <!-- Others -->
 
-        <h2 class="font-bold">Others</h2>
+        <h2 class="font-semibold mb-4 border-b md:text-2xl">Others</h2>
         <div class="wrapper1" id="names4">
           <% foods.forEach(function(food) { %> <%
-          if(food.id[food.id.length-1]=='2') { %>
+          if(food.id[food.id.length-1]=='2' ) { %>
           <div class="item4">
-            <div class="text-center">
+            <div class="w-full xs:w-4/5 md:w-64">
               <img
-                class="h-14 w-20 mt-3 mx-auto"
+                class="h-40 mb-4 mx-auto"
                 src="/img/<%= food.image %>"
                 alt=""
               />
-              <div
-                style="
-                  color: rgb(19, 31, 83);
-                  margin-top: 10px;
-                  font-weight: 700;
-                  font-size: 15px;
-                "
-                class="collection-item4"
-              >
-                <a href="#"><%= food.name %></a>
-              </div>
-
-              <div
-                id="food__Info"
-                style="margin-left: 5px"
-                class="text-left mx-auto mt-1"
-              >
-                <h3
-                  style="color: rgb(189, 121, 135)"
-                  class="font-bold text-md uppercase ml-1"
+              <div class="text-center mb-4">
+                <h2 class="mb-4 text-lg"><%= food.name %></h2>
+                <span class="size py-1 px-4 rounded-full uppercase text-xs"
+                  ><%= food.size %></span
                 >
-                  <%= food.size %>
-                </h3>
-                <h5
-                  style="color: rgb(190, 105, 122)"
-                  class="font-bold text-md ml-20"
-                >
-                  ₹ <%= food.price %>
-                </h5>
-              </div>
-
-              <div class="mt-2 mb-1">
-                <button
-                  data-food="<%= JSON.stringify(food) %>"
-                  class="add-to-cart px-3 rounded-full font-bold"
-                >
-                  <span>+</span> <span class="ml-3">Add</span>
-                </button>
+                <div class="flex items-center justify-around mt-6 px-2">
+                  <span class="font-bold text-lg">₹ <%= food.price %></span>
+                  <button
+                    data-food="<%= JSON.stringify(food) %>"
+                    class="add-to-cart py-1 px-5 rounded-full font-bold"
+                  >
+                    <span>+</span> <span class="ml-4">Add</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
           <% }%> <% })%>
         </div>
       </div>
-      <a href="/menu" class="font-bold">View all food Items-></a>
+      <a href="/menu" class="font-bold md:text-2xl">View all food Items-></a>
     </section>
 
     <script>
@@ -294,7 +200,7 @@
 
         let target1__Container = document.getElementById("names1");
 
-        let container1__Visibility = target1__Container.querySelectorAll(
+        let container1_Visibility = target1_Container.querySelectorAll(
           "div.item1"
         );
 
@@ -311,125 +217,125 @@
         }
       }
 
-      // Search For Coffee
-      //Get input Element
-      let filterInput2 = document.getElementById("filterInput");
-      //Add Event Listener
-      filterInput2.addEventListener("keyup", filterNames2);
+      // // Search For Coffee
+      // //Get input Element
+      // let filterInput2 = document.getElementById("filterInput");
+      // //Add Event Listener
+      // filterInput2.addEventListener("keyup", filterNames2);
 
-      function filterNames2() {
-        console.log(2);
+      // function filterNames2() {
+      //   console.log(2);
 
-        // Get Value Of input
-        let filterValue = document
-          .getElementById("filterInput")
-          .value.toUpperCase();
+      //   // Get Value Of input
+      //   let filterValue = document
+      //     .getElementById("filterInput")
+      //     .value.toUpperCase();
 
-        console.log(filterValue);
+      //   console.log(filterValue);
 
-        //Get Names ul
-        let ul1 = document.getElementById("names2");
+      //   //Get Names ul
+      //   let ul1 = document.getElementById("names2");
 
-        let lia = ul1.querySelectorAll("div.collection-item2");
+      //   let lia = ul1.querySelectorAll("div.collection-item2");
 
-        let target1__Container = document.getElementById("names2");
+      //   let target1__Container = document.getElementById("names2");
 
-        let container1__Visibility = target1__Container.querySelectorAll(
-          "div.item2"
-        );
+      //   let container1_Visibility = target1_Container.querySelectorAll(
+      //     "div.item2"
+      //   );
 
-        for (let i = 0; i < lia.length; i++) {
-          let a = lia[i].getElementsByTagName("a")[0];
-          // If Matched
-          if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
-            lia[i].style.display = "";
-            container1__Visibility[i].style.display = "";
-          } else {
-            lia[i].style.display = "none";
-            container1__Visibility[i].style.display = "none";
-          }
-        }
-      }
+      //   for (let i = 0; i < lia.length; i++) {
+      //     let a = lia[i].getElementsByTagName("a")[0];
+      //     // If Matched
+      //     if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+      //       lia[i].style.display = "";
+      //       container1__Visibility[i].style.display = "";
+      //     } else {
+      //       lia[i].style.display = "none";
+      //       container1__Visibility[i].style.display = "none";
+      //     }
+      //   }
+      // }
 
-      // Search For Drinks
-      //Get input Element
-      let filterInput3 = document.getElementById("filterInput");
-      //Add Event Listener
-      filterInput3.addEventListener("keyup", filterNames3);
+      // // Search For Drinks
+      // //Get input Element
+      // let filterInput3 = document.getElementById("filterInput");
+      // //Add Event Listener
+      // filterInput3.addEventListener("keyup", filterNames3);
 
-      function filterNames3() {
-        console.log(3);
+      // function filterNames3() {
+      //   console.log(3);
 
-        // Get Value Of input
-        let filterValue = document
-          .getElementById("filterInput")
-          .value.toUpperCase();
+      //   // Get Value Of input
+      //   let filterValue = document
+      //     .getElementById("filterInput")
+      //     .value.toUpperCase();
 
-        console.log(filterValue);
+      //   console.log(filterValue);
 
-        //Get Names ul
-        let ul1 = document.getElementById("names3");
+      //   //Get Names ul
+      //   let ul1 = document.getElementById("names3");
 
-        let lia = ul1.querySelectorAll("div.collection-item3");
+      //   let lia = ul1.querySelectorAll("div.collection-item3");
 
-        let target1__Container = document.getElementById("names3");
+      //   let target1__Container = document.getElementById("names3");
 
-        let container1__Visibility = target1__Container.querySelectorAll(
-          "div.item3"
-        );
+      //   let container1_Visibility = target1_Container.querySelectorAll(
+      //     "div.item3"
+      //   );
 
-        for (let i = 0; i < lia.length; i++) {
-          let a = lia[i].getElementsByTagName("a")[0];
-          // If Matched
-          if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
-            lia[i].style.display = "";
-            container1__Visibility[i].style.display = "";
-          } else {
-            lia[i].style.display = "none";
-            container1__Visibility[i].style.display = "none";
-          }
-        }
-      }
+      //   for (let i = 0; i < lia.length; i++) {
+      //     let a = lia[i].getElementsByTagName("a")[0];
+      //     // If Matched
+      //     if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+      //       lia[i].style.display = "";
+      //       container1__Visibility[i].style.display = "";
+      //     } else {
+      //       lia[i].style.display = "none";
+      //       container1__Visibility[i].style.display = "none";
+      //     }
+      //   }
+      // }
 
-      // Search For Others
-      //Get input Element
-      let filterInput4 = document.getElementById("filterInput");
-      //Add Event Listener
-      filterInput4.addEventListener("keyup", filterNames4);
+      // // Search For Others
+      // //Get input Element
+      // let filterInput4 = document.getElementById("filterInput");
+      // //Add Event Listener
+      // filterInput4.addEventListener("keyup", filterNames4);
 
-      function filterNames4() {
-        console.log(4);
+      // function filterNames4() {
+      //   console.log(4);
 
-        // Get Value Of input
-        let filterValue = document
-          .getElementById("filterInput")
-          .value.toUpperCase();
+      //   // Get Value Of input
+      //   let filterValue = document
+      //     .getElementById("filterInput")
+      //     .value.toUpperCase();
 
-        console.log(filterValue);
+      //   console.log(filterValue);
 
-        //Get Names ul
-        let ul1 = document.getElementById("names4");
+      //   //Get Names ul
+      //   let ul1 = document.getElementById("names4");
 
-        let lia = ul1.querySelectorAll("div.collection-item4");
+      //   let lia = ul1.querySelectorAll("div.collection-item4");
 
-        let target1__Container = document.getElementById("names4");
+      //   let target1__Container = document.getElementById("names4");
 
-        let container1__Visibility = target1__Container.querySelectorAll(
-          "div.item4"
-        );
+      //   let container1_Visibility = target1_Container.querySelectorAll(
+      //     "div.item4"
+      //   );
 
-        for (let i = 0; i < lia.length; i++) {
-          let a = lia[i].getElementsByTagName("a")[0];
-          // If Matched
-          if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
-            lia[i].style.display = "";
-            container1__Visibility[i].style.display = "";
-          } else {
-            lia[i].style.display = "none";
-            container1__Visibility[i].style.display = "none";
-          }
-        }
-      }
+      //   for (let i = 0; i < lia.length; i++) {
+      //     let a = lia[i].getElementsByTagName("a")[0];
+      //     // If Matched
+      //     if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+      //       lia[i].style.display = "";
+      //       container1__Visibility[i].style.display = "";
+      //     } else {
+      //       lia[i].style.display = "none";
+      //       container1__Visibility[i].style.display = "none";
+      //     }
+      //   }
+      // }
     </script>
   </body>
 </html>
