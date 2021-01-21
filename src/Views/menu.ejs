@@ -14,52 +14,53 @@
 
   <body>
     <section
-      class="menu px-2 mx-4 md:px-8 xl:px-12 md:mx-8 xl:mx-12 mx-auto mt-12 md:py-8"
+      class="menu px-2 mx-4 md:px-8 xl:px-12 md:mx-8 xl:mx-12 mt-12 md:py-8 mx-auto mt-16"
     >
       <!-- Heading   -->
-      <div class="container mb-3">
-        <a href="/menu" class="text-xl font-bold md:text-2xl">All Varieties</a>
+      <div class="mb-2">
+        <a href="/menu" class="text-xl underline font-bold md:text-2xl">
+          All Foods
+        </a>
       </div>
 
       <!-- Search -->
       <div class="container">
         <input
           id="filterInput"
-          class="border border-gray-400 p-2 w-1/2 mb-2 rounded-md"
+          class="border border-gray-400 p-2 w-3/4 mb-2 rounded-md text-green-700"
           type="text"
-          placeholder="Search Food Items"
-          style="
-            margin-right: 100px;
-            margin-top: 20px;
-            max-width: 300px;
-            outline-width: 0;
-            position: fixed;
-          "
+          placeholder="Search food "
+          style="margin-right: 100px; margin-top: 20px; max-width: 300px"
         />
       </div>
       <hr />
 
       <!-- Varieties -->
-      <div class="mt-16">
+      <div class="px-4 mt-4">
         <!-- Pizza -->
 
-        <h2 class="font-semibold mb-4 border-b md:text-2xl">Pizza</h2>
+        <h2 class="font-semibold mb-4 border-b text-xl md:text-2xl">Pizza</h2>
         <div class="wrapper1" id="names1">
           <% foods.forEach(function(food) { %> <%
           if(food.id[food.id.length-1]=='e' ) { %>
           <div class="item1">
             <div class="w-full xs:w-4/5 md:w-64">
               <img
-                class="h-40 mb-4 mx-auto"
+                class="h-40 mb-4 mx-auto rounded"
                 src="/img/<%= food.image %>"
                 alt=""
               />
               <div class="text-center mb-4">
-                <h2 class="mb-4 text-lg"><%= food.name %></h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs"
+                <div class="collection-item1 mb-4 text-xl">
+                  <a href="#"><%= food.name %></a>
+                </div>
+                <!-- <h2 class="mb-4 text-lg"><%= food.name %></h2> -->
+                <span
+                  class="size py-1 px-4 rounded-full uppercase text-xs"
+                  style="color: #918e8e"
                   ><%= food.size %></span
                 >
-                <div class="flex items-center justify-around mt-6 px-2">
+                <div class="flex items-center justify-evenly mt-6">
                   <span class="font-bold text-lg">₹ <%= food.price %></span>
                   <button
                     data-food="<%= JSON.stringify(food) %>"
@@ -76,23 +77,28 @@
 
         <!-- Coffee -->
 
-        <h2 class="font-semibold mb-4 border-b md:text-2xl">Coffee</h2>
+        <h2 class="font-semibold mb-4 text-xl md:text-2xl border-b">Coffee</h2>
         <div class="wrapper1" id="names2">
           <% foods.forEach(function(food) { %> <%
           if(food.id[food.id.length-1]=='d' ) { %>
           <div class="item2">
             <div class="w-full xs:w-4/5 md:w-64">
               <img
-                class="h-40 mb-4 mx-auto"
+                class="h-40 mb-4 mx-auto rounded"
                 src="/img/<%= food.image %>"
                 alt=""
               />
               <div class="text-center mb-4">
-                <h2 class="mb-4 text-lg"><%= food.name %></h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs"
+                <div class="collection-item2 mb-4 text-xl">
+                  <a href="#"><%= food.name %></a>
+                </div>
+                <!-- <h2 class="mb-4 text-lg"><%= food.name %></h2> -->
+                <span
+                  class="size py-1 px-4 rounded-full uppercase text-xs"
+                  style="color: #918e8e"
                   ><%= food.size %></span
                 >
-                <div class="flex items-center justify-around mt-6 px-2">
+                <div class="flex items-center justify-evenly mt-6">
                   <span class="font-bold text-lg">₹ <%= food.price %></span>
                   <button
                     data-food="<%= JSON.stringify(food) %>"
@@ -109,23 +115,27 @@
 
         <!-- Drinks -->
 
-        <h2 class="font-semibold mb-4 border-b md:text-2xl">Drinks</h2>
+        <h2 class="font-semibold mb-4 text-xl md:text-2xl border-b">Drinks</h2>
         <div class="wrapper1" id="names3">
           <% foods.forEach(function(food) { %> <%
           if(food.id[food.id.length-1]=='f' ) { %>
           <div class="item3">
             <div class="w-full xs:w-4/5 md:w-64">
               <img
-                class="h-40 mb-4 mx-auto"
+                class="h-40 mb-4 mx-auto rounded"
                 src="/img/<%= food.image %>"
                 alt=""
               />
               <div class="text-center mb-4">
-                <h2 class="mb-4 text-lg"><%= food.name %></h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs"
+                <div class="collection-item3 mb-4 text-xl">
+                  <a href="#"><%= food.name %></a>
+                </div>
+                <span
+                  class="size py-1 px-4 rounded-full uppercase text-xs"
+                  style="color: #918e8e"
                   ><%= food.size %></span
                 >
-                <div class="flex items-center justify-around mt-6 px-2">
+                <div class="flex items-center justify-evenly mt-6">
                   <span class="font-bold text-lg">₹ <%= food.price %></span>
                   <button
                     data-food="<%= JSON.stringify(food) %>"
@@ -142,23 +152,27 @@
 
         <!-- Others -->
 
-        <h2 class="font-semibold mb-4 border-b md:text-2xl">Others</h2>
+        <h2 class="font-semibold mb-4 text-xl border-b md:text-2xl">Others</h2>
         <div class="wrapper1" id="names4">
           <% foods.forEach(function(food) { %> <%
           if(food.id[food.id.length-1]=='2' ) { %>
           <div class="item4">
             <div class="w-full xs:w-4/5 md:w-64">
               <img
-                class="h-40 mb-4 mx-auto"
+                class="h-40 mb-4 mx-auto rounded"
                 src="/img/<%= food.image %>"
                 alt=""
               />
               <div class="text-center mb-4">
-                <h2 class="mb-4 text-lg"><%= food.name %></h2>
-                <span class="size py-1 px-4 rounded-full uppercase text-xs"
+                <div class="collection-item4 mb-4 text-xl">
+                  <a href="#"><%= food.name %></a>
+                </div>
+                <span
+                  class="size py-1 px-4 rounded-full uppercase text-xs"
+                  style="color: #918e8e"
                   ><%= food.size %></span
                 >
-                <div class="flex items-center justify-around mt-6 px-2">
+                <div class="flex items-center justify-evenly mt-6">
                   <span class="font-bold text-lg">₹ <%= food.price %></span>
                   <button
                     data-food="<%= JSON.stringify(food) %>"
@@ -173,7 +187,11 @@
           <% }%> <% })%>
         </div>
       </div>
-      <a href="/menu" class="font-bold md:text-2xl">View all food Items-></a>
+      <a
+        href="/menu"
+        class="font-bold text-green-700 block border-t pt-2 text-xl md:text-2xl"
+        >View all food Items-></a
+      >
     </section>
 
     <script>
@@ -182,7 +200,6 @@
       let filterInput1 = document.getElementById("filterInput");
       //Add Event Listener
       filterInput1.addEventListener("keyup", filterNames1);
-
       function filterNames1() {
         console.log(1);
 
@@ -197,13 +214,10 @@
         let ul1 = document.getElementById("names1");
 
         let lia = ul1.querySelectorAll("div.collection-item1");
-
         let target1__Container = document.getElementById("names1");
-
-        let container1_Visibility = target1_Container.querySelectorAll(
+        let container1__Visibility = target1__Container.querySelectorAll(
           "div.item1"
         );
-
         for (let i = 0; i < lia.length; i++) {
           let a = lia[i].getElementsByTagName("a")[0];
           // If Matched
@@ -216,126 +230,111 @@
           }
         }
       }
+      // Search For Coffee
+      //Get input Element
+      let filterInput2 = document.getElementById("filterInput");
+      //Add Event Listener
+      filterInput2.addEventListener("keyup", filterNames2);
+      function filterNames2() {
+        console.log(2);
 
-      // // Search For Coffee
-      // //Get input Element
-      // let filterInput2 = document.getElementById("filterInput");
-      // //Add Event Listener
-      // filterInput2.addEventListener("keyup", filterNames2);
+        // Get Value Of input
+        let filterValue = document
+          .getElementById("filterInput")
+          .value.toUpperCase();
 
-      // function filterNames2() {
-      //   console.log(2);
+        console.log(filterValue);
 
-      //   // Get Value Of input
-      //   let filterValue = document
-      //     .getElementById("filterInput")
-      //     .value.toUpperCase();
+        //Get Names ul
+        let ul1 = document.getElementById("names2");
 
-      //   console.log(filterValue);
+        let lia = ul1.querySelectorAll("div.collection-item2");
+        let target1__Container = document.getElementById("names2");
+        let container1__Visibility = target1__Container.querySelectorAll(
+          "div.item2"
+        );
+        for (let i = 0; i < lia.length; i++) {
+          let a = lia[i].getElementsByTagName("a")[0];
+          // If Matched
+          if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+            lia[i].style.display = "";
+            container1__Visibility[i].style.display = "";
+          } else {
+            lia[i].style.display = "none";
+            container1__Visibility[i].style.display = "none";
+          }
+        }
+      }
+      // Search For Drinks
+      //Get input Element
+      let filterInput3 = document.getElementById("filterInput");
+      //Add Event Listener
+      filterInput3.addEventListener("keyup", filterNames3);
+      function filterNames3() {
+        console.log(3);
 
-      //   //Get Names ul
-      //   let ul1 = document.getElementById("names2");
+        // Get Value Of input
+        let filterValue = document
+          .getElementById("filterInput")
+          .value.toUpperCase();
 
-      //   let lia = ul1.querySelectorAll("div.collection-item2");
+        console.log(filterValue);
 
-      //   let target1__Container = document.getElementById("names2");
+        //Get Names ul
+        let ul1 = document.getElementById("names3");
 
-      //   let container1_Visibility = target1_Container.querySelectorAll(
-      //     "div.item2"
-      //   );
+        let lia = ul1.querySelectorAll("div.collection-item3");
+        let target1__Container = document.getElementById("names3");
+        let container1__Visibility = target1__Container.querySelectorAll(
+          "div.item3"
+        );
+        for (let i = 0; i < lia.length; i++) {
+          let a = lia[i].getElementsByTagName("a")[0];
+          // If Matched
+          if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+            lia[i].style.display = "";
+            container1__Visibility[i].style.display = "";
+          } else {
+            lia[i].style.display = "none";
+            container1__Visibility[i].style.display = "none";
+          }
+        }
+      }
+      // Search For Others
+      //Get input Element
+      let filterInput4 = document.getElementById("filterInput");
+      //Add Event Listener
+      filterInput4.addEventListener("keyup", filterNames4);
+      function filterNames4() {
+        console.log(4);
 
-      //   for (let i = 0; i < lia.length; i++) {
-      //     let a = lia[i].getElementsByTagName("a")[0];
-      //     // If Matched
-      //     if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
-      //       lia[i].style.display = "";
-      //       container1__Visibility[i].style.display = "";
-      //     } else {
-      //       lia[i].style.display = "none";
-      //       container1__Visibility[i].style.display = "none";
-      //     }
-      //   }
-      // }
+        // Get Value Of input
+        let filterValue = document
+          .getElementById("filterInput")
+          .value.toUpperCase();
 
-      // // Search For Drinks
-      // //Get input Element
-      // let filterInput3 = document.getElementById("filterInput");
-      // //Add Event Listener
-      // filterInput3.addEventListener("keyup", filterNames3);
+        console.log(filterValue);
 
-      // function filterNames3() {
-      //   console.log(3);
+        //Get Names ul
+        let ul1 = document.getElementById("names4");
 
-      //   // Get Value Of input
-      //   let filterValue = document
-      //     .getElementById("filterInput")
-      //     .value.toUpperCase();
-
-      //   console.log(filterValue);
-
-      //   //Get Names ul
-      //   let ul1 = document.getElementById("names3");
-
-      //   let lia = ul1.querySelectorAll("div.collection-item3");
-
-      //   let target1__Container = document.getElementById("names3");
-
-      //   let container1_Visibility = target1_Container.querySelectorAll(
-      //     "div.item3"
-      //   );
-
-      //   for (let i = 0; i < lia.length; i++) {
-      //     let a = lia[i].getElementsByTagName("a")[0];
-      //     // If Matched
-      //     if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
-      //       lia[i].style.display = "";
-      //       container1__Visibility[i].style.display = "";
-      //     } else {
-      //       lia[i].style.display = "none";
-      //       container1__Visibility[i].style.display = "none";
-      //     }
-      //   }
-      // }
-
-      // // Search For Others
-      // //Get input Element
-      // let filterInput4 = document.getElementById("filterInput");
-      // //Add Event Listener
-      // filterInput4.addEventListener("keyup", filterNames4);
-
-      // function filterNames4() {
-      //   console.log(4);
-
-      //   // Get Value Of input
-      //   let filterValue = document
-      //     .getElementById("filterInput")
-      //     .value.toUpperCase();
-
-      //   console.log(filterValue);
-
-      //   //Get Names ul
-      //   let ul1 = document.getElementById("names4");
-
-      //   let lia = ul1.querySelectorAll("div.collection-item4");
-
-      //   let target1__Container = document.getElementById("names4");
-
-      //   let container1_Visibility = target1_Container.querySelectorAll(
-      //     "div.item4"
-      //   );
-
-      //   for (let i = 0; i < lia.length; i++) {
-      //     let a = lia[i].getElementsByTagName("a")[0];
-      //     // If Matched
-      //     if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
-      //       lia[i].style.display = "";
-      //       container1__Visibility[i].style.display = "";
-      //     } else {
-      //       lia[i].style.display = "none";
-      //       container1__Visibility[i].style.display = "none";
-      //     }
-      //   }
-      // }
+        let lia = ul1.querySelectorAll("div.collection-item4");
+        let target1__Container = document.getElementById("names4");
+        let container1__Visibility = target1__Container.querySelectorAll(
+          "div.item4"
+        );
+        for (let i = 0; i < lia.length; i++) {
+          let a = lia[i].getElementsByTagName("a")[0];
+          // If Matched
+          if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+            lia[i].style.display = "";
+            container1__Visibility[i].style.display = "";
+          } else {
+            lia[i].style.display = "none";
+            container1__Visibility[i].style.display = "none";
+          }
+        }
+      }
     </script>
   </body>
 </html>

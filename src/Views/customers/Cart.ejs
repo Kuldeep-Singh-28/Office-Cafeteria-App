@@ -16,7 +16,6 @@
           <img src="/img/cart-black.png" alt="cart" />
           <h1 class="font-bold text-2xl ml-4">Order summary</h1>
         </div>
-
         <div class="main flex flex-col md:flex-row px-2">
           <div class="left w-full md:w-8/12 md:h-screen md:pr-12">
             <div
@@ -24,7 +23,11 @@
             >
               <% for(let food of Object.values(session.cart.items)) { %>
               <div class="flex justify-between items-center my-8">
-                <img class="w-24" src="/img/<%= food.item.image%>" alt="" />
+                <img
+                  class="w-24 rounded"
+                  src="/img/<%= food.item.image%>"
+                  alt=""
+                />
                 <div class="flex-1 ml-4">
                   <h1 class="font-bold"><%= food.item.name%></h1>
                   <span><%= food.item.size%></span>
@@ -33,7 +36,7 @@
                   </p>
                 </div>
                 <span class="hidden md:inline flex-1">Pcs <%= food.qty%></span>
-                <span class="font-bold text-lg">Rs. <%= food.item.price%></span>
+                <span class="font-bold text-lg">₹ <%= food.item.price%></span>
               </div>
               <% } %>
             </div>
@@ -44,11 +47,10 @@
               <div class="">
                 <span class="text-lg font-bold">Total Amount:</span>
                 <span class="amount text-2xl font-bold ml-4"
-                  >Rs. <%= session.cart.totalPrice%></span
+                  >₹ <%= session.cart.totalPrice%></span
                 >
               </div>
               <% if(user) { %>
-
               <div class="text-green-700 text-center">
                 <form
                   action="/orders"
@@ -56,7 +58,7 @@
                   class="mt-12"
                   id="payment-form"
                 >
-                  <div class="relative m-auto w-4/5 mb-4">
+                  <div class="relative m-auto w-11/12 mb-4">
                     <select
                       id="paymentType"
                       name="paymentType"
@@ -81,20 +83,20 @@
                   </div>
                   <input
                     name="phone"
-                    class="border border-gray-400 p-2 w-4/5 mb-4 rounded-md"
+                    class="border border-gray-400 p-2 w-11/12 mb-4 rounded-md"
                     type="tel"
                     placeholder="Phone number"
                   />
                   <input
                     name="address"
-                    class="border border-gray-400 p-2 w-4/5 rounded-md"
+                    class="border border-gray-400 p-2 w-11/12 rounded-md"
                     type="text"
                     placeholder="Address"
                   />
                   <div class="mt-4">
                     <div
                       id="card-element"
-                      class="w-4/5 m-auto border-gray-400"
+                      class="w-11/12 m-auto border-gray-400"
                     ></div>
                     <button
                       class="btn-primary px-6 py-2 rounded-full text-white font-bold mt-6"
@@ -117,8 +119,7 @@
         </div>
       </div>
       <% } else { %>
-
-      <div class="empty-cart py-16">
+      <div class="empty-cart py-16 my-4">
         <div class="container mx-auto text-center">
           <h1 class="text-3xl font-bold mb-2">Cart Empty 😕</h1>
           <p class="text-gray-500 text-sm md:text-lg mb-12">
@@ -137,7 +138,6 @@
           >
         </div>
       </div>
-
       <% } %>
     </section>
   </body>

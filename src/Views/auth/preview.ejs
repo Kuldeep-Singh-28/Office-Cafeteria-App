@@ -1,4 +1,3 @@
-<!---------deepali starts---------------->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,11 +10,11 @@
   />
   <body>
     <section class="login flex items-center justify-center pt-24">
-      <div class="w-full max-w-xs">
+      <div class="w-full max-w-xs md:max-w-2xl">
         <form
           action="/preview"
           method="POST"
-          class="shadow-lg bg-white dark:bg-gray-800 rounded px-8 pt-6 pb-8 mb-4"
+          class="shadow-lg bg-white dark:bg-gray-800 text-green-700 rounded px-8 pt-6 pb-8 mb-4"
         >
           <% if(messages.error) { %>
           <span class="text-red-500 text-sm"><%= messages.error%></span>
@@ -24,7 +23,7 @@
           <div>
             <img src="/uploads/<%= image %>" alt="id card" />
           </div>
-          <div class="mb-4">
+          <div class="mb-4 mt-4">
             <label class="block text-sm font-bold mb-2" for="username">
               Employee Id
             </label>
@@ -116,4 +115,3 @@
     </section>
   </body>
 </html>
-<!---------deepali ends------------------>

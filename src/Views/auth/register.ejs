@@ -12,7 +12,7 @@
     <section
       class="login flex text-green-700 items-center justify-center pt-24"
     >
-      <div class="w-full max-w-xs">
+      <div class="max-w-xs md:max-w-max">
         <form
           action="/register"
           method="POST"
@@ -22,57 +22,128 @@
           <% if(messages.error) { %>
           <span class="text-red-500 text-sm"><%= messages.error%></span>
           <% }%>
-          <div class="mb-4">
-            <label class="block text-sm font-bold mb-2" for="username">
-              Employee Id
-            </label>
-            <input
-              name="employee_id"
-              value="<%=messages.employee_id%>"
-              class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
-              type="text"
-              placeholder="Enter your employee id"
-            />
+          <div class="md:flex">
+            <div class="flex-1 md:mr-4 md:pr-4 md:border-r">
+              <div class="mb-4">
+                <label class="block text-sm font-bold mb-2" for="username">
+                  Employee Id
+                </label>
+                <input
+                  name="employee_id"
+                  value="<%=messages.employee_id%>"
+                  class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                  id="username"
+                  type="text"
+                  placeholder="Enter your employee id"
+                />
+              </div>
+              <div class="mb-4">
+                <label class="block text-sm font-bold mb-2" for="username">
+                  Name
+                </label>
+                <input
+                  name="name"
+                  value="<%=messages.name%>"
+                  class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                  id="username"
+                  type="text"
+                  placeholder="Enter your name"
+                />
+              </div>
+              <div class="mb-4">
+                <label class="block text-sm font-bold mb-2" for="username">
+                  Email
+                </label>
+                <input
+                  name="email"
+                  value="<%=messages.email%>"
+                  class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="username"
+                  type="email"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div class="mb-4">
+                <label class="block text-sm font-bold mb-2" for="username">
+                  Organization Name
+                </label>
+                <input
+                  name="organization_name"
+                  value="<%=messages.organization_name%>"
+                  class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                  id="username"
+                  type="text"
+                  placeholder="Enter your organization name"
+                />
+              </div>
+            </div>
+            <div class="md:flex-1">
+              <div class="mb-4">
+                <label class="block text-sm font-bold mb-2" for="username">
+                  Mobile No
+                </label>
+                <input
+                  name="mobile_no"
+                  value="<%=messages.mobile_no%>"
+                  class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
+                  id="username"
+                  type="text"
+                  placeholder="Enter your mobile no"
+                />
+              </div>
+              <div class="mb-4">
+                <label class="block text-sm font-bold mb-2" for="password">
+                  Password
+                </label>
+                <input
+                  name="password"
+                  class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="password"
+                  required
+                  type="password"
+                  placeholder="******************"
+                />
+              </div>
+              <div class="mb-4">
+                <label class="block text-sm font-bold mb-2" for="password">
+                  Confirm Password
+                </label>
+                <input
+                  name="confirmpassword"
+                  class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="password"
+                  type="password"
+                  placeholder="******************"
+                />
+              </div>
+              <div class="mb-4">
+                <label class="block text-sm font-bold mb-2" for="image">
+                  Id Card image
+                </label>
+                <input
+                  name="file"
+                  class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  id="username"
+                  type="file"
+                  required
+                />
+              </div>
+            </div>
           </div>
-          <div class="mb-4">
-            <label class="block text-sm font-bold mb-2" for="username">
-              Name
-            </label>
-            <input
-              name="name"
-              value="<%=messages.name%>"
-              class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
-              type="text"
-              placeholder="Enter your name"
-            />
-          </div>
-          <div class="mb-4">
-            <label class="block text-sm font-bold mb-2" for="username">
-              Email
-            </label>
-            <input
-              name="email"
-              value="<%=messages.email%>"
-              class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
-              type="email"
-              placeholder="Enter your email"
-            />
-          </div>
-          <div class="mb-4">
-            <label class="block text-sm font-bold mb-2" for="username">
-              Organization Name
-            </label>
-            <input
-              name="organization_name"
-              value="<%=messages.organization_name%>"
-              class="text-gray-900 dark:text-white shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="username"
-              type="text"
-              placeholder="Enter your organization name"
-            />
+
+          <div class="flex items-center justify-between md:justify-around mt-4">
+            <button
+              class="btn-primary rounded-full text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              type="submit"
+            >
+              Register
+            </button>
+            <a
+              class="inline-block align-baseline font-bold text-sm"
+              href="/login"
+            >
+              Already have account?
+            </a>
           </div>
         </form>
         <p class="text-center text-gray-500 text-xs">

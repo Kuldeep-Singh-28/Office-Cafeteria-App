@@ -9,11 +9,10 @@
     rel="stylesheet"
   />
   <body>
-    <section class="orders light-section">
-      <div class="container max-w-max mx-auto pt-12">
-        <h1 class="font-bold text-lg mb-4">All orders</h1>
+    <section class="orders section light-section">
+      <div class="container max-w-max mx-auto px-3">
+        <h1 class="font-bold text-lg mb-4 underline md:text-2xl">All orders</h1>
         <% if(messages.success) { %>
-
         <div
           id="success-alert"
           class="flex items-center bg-green-500 text-white text-sm font-bold px-4 py-3"
@@ -32,7 +31,7 @@
         </div>
         <% } %>
         <table class="w-full table-auto bg-white">
-          <thead>
+          <thead class="text-green-700">
             <tr>
               <th class="px-4 py-2 text-left">Order ID</th>
               <th class="px-4 py-2 text-left">Payment</th>
@@ -40,9 +39,8 @@
               <th class="px-4 py-2 text-left">Time</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="text-black">
             <% if(orders.length) { %> <% orders.forEach((order) => { %>
-
             <tr>
               <td class="border px-4 py-2">
                 <a class="link" href="/customer/orders/<%= order._id %>"
