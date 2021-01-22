@@ -23,12 +23,10 @@ const initRoutes = (app) => {
   app.get("/login", guest, authController().login);
   app.post("/login", authController().postLogin);
   app.get("/register", guest, authController().register);
-  //----deepali starts--------------
   app.post("/register", upload, authController().postRegister);
   app.get("/preview", guest, authController().preview);
   app.post("/preview", authController().postPreview);
   app.get("/success", guest, authController().success);
-  //----------deepali ends------------
   app.post("/logout", authController().logout);
 
   //  cart
