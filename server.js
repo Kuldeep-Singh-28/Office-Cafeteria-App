@@ -13,7 +13,8 @@ const passport = require("passport");
 const Emitter = require("events");
 
 // Database connection
-mongoose.connect(process.env.MONGO_CONNECTION_URL, {
+const DBUrl = process.env.MONGO_CONNECTION_URL;
+mongoose.connect(DBUrl, {
   useNewUrlParser: true,
   useCreateIndex: true,
   useUnifiedTopology: true,
@@ -76,7 +77,7 @@ app.use(expressLayouts);
 app.set("views", path.join(__dirname, "/src/views"));
 app.set("view engine", "ejs");
 
-require("./routes/web")(app);
+require(path.join(__dirname, "/routes/web"))(app);
 
 // server
 const server = app.listen(PORT, () => {
@@ -100,5 +101,3 @@ eventEmitter.on("orderUpdated", (data) => {
 eventEmitter.on("orderPlaced", (data) => {
   io.to("adminRoom").emit("orderPlaced", data);
 });
-
-

@@ -9,10 +9,8 @@ const statusController = require("../app/http/controllers/admin/statusController
 const guest = require("../app/http/middleware/guest");
 const auth = require("../app/http/middleware/auth");
 const admin = require("../app/http/middleware/admin");
-//------deepali starts--------
 var myModule = require("../app/http/middleware/upload");
 var upload = myModule.upload;
-//------deepali ends---------
 
 const initRoutes = (app) => {
   // routes
