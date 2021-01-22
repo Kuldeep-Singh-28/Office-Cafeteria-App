@@ -12,21 +12,6 @@ const MongoDbStore = require("connect-mongo")(session);
 const passport = require("passport");
 const Emitter = require("events");
 
-// routes
-const homeController = require("./app/http/controllers/homecontroller");
-const authController = require("./app/http/controllers/authcontroller");
-const cartController = require("./app/http/controllers/customers/cartController");
-const orderController = require("./app/http/controllers/customers/orderController");
-const adminOrderController = require("./app/http/controllers/admin/orderController");
-const statusController = require("./app/http/controllers/admin/statusController");
-
-// middlewares
-const guest = require("./app/http/middleware/guest");
-const auth = require("./app/http/middleware/auth");
-const admin = require("./app/http/middleware/admin");
-var myModule = require("./app/http/middleware/upload");
-var upload = myModule.upload;
-
 // Database connection
 const DBUrl = process.env.MONGO_CONNECTION_URL;
 mongoose.connect(DBUrl, {
@@ -93,38 +78,7 @@ app.set("views", path.join(__dirname, "/src/views"));
 app.set("view engine", "ejs");
 
 // routes
-
-//   home
-app.get("/", homeController().index);
-app.get("/menu", homeController().menu);
-
-//   auth
-app.get("/login", guest, authController().login);
-app.post("/login", authController().postLogin);
-app.get("/register", guest, authController().register);
-app.post("/register", upload, authController().postRegister);
-app.get("/preview", guest, authController().preview);
-app.post("/preview", authController().postPreview);
-app.get("/success", guest, authController().success);
-app.post("/logout", authController().logout);
-
-//  cart
-app.get("/cart", cartController().index);
-app.post("/update-cart", cartController().update);
-
-// customer/order routes
-app.post("/orders", auth, orderController().store);
-app.get("/customer/orders", auth, orderController().index);
-app.get("/customer/orders/:id", auth, orderController().show);
-
-// Admin routes
-app.get("/admin/orders", admin, adminOrderController().index);
-app.post("/admin/order/status", admin, statusController().update);
-
-// contactus
-app.post("/contact_us", homeController().contact_us);
-
-// require(path.join(__dirname, "/routes/web"))(app);
+require(path.join(__dirname, "/routes/web"))(app);
 
 // server
 const server = app.listen(PORT, () => {

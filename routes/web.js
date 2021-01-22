@@ -1,5 +1,5 @@
 const homeController = require("../app/http/controllers/homecontroller");
-const authController = require("../app/http/controllers/authcontroller");
+const authController = require("../app/http/controllers/authController");
 const cartController = require("../app/http/controllers/customers/cartController");
 const orderController = require("../app/http/controllers/customers/orderController");
 const adminOrderController = require("../app/http/controllers/admin/orderController");
