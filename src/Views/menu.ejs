@@ -36,7 +36,7 @@
       <hr />
 
       <!-- Varieties -->
-      <div class="px-4 mt-4">
+      <div class="px-2 mt-4">
         <!-- Pizza -->
 
         <h2 class="font-semibold mb-4 border-b text-xl md:text-2xl">Pizza</h2>
@@ -186,6 +186,45 @@
           </div>
           <% }%> <% })%>
         </div>
+
+        <!-- WEEK -->
+
+        <h2 id="week" class="font-semibold mb-4 text-xl border-b md:text-2xl">
+          Weekly Special
+        </h2>
+        <div class="wrapper1" id="names5">
+          <% foods.forEach(function(food) { %> <%
+          if(food.id[food.id.length-1]=='d' ) { %>
+          <div class="item5">
+            <div class="w-full xs:w-4/5 md:w-64">
+              <img
+                class="h-40 mb-4 mx-auto rounded"
+                src="/img/<%= food.image %>"
+                alt=""
+              />
+              <div class="text-center mb-4">
+                <div class="collection-item5 mb-4 text-xl">
+                  <a href="#"><%= food.name %></a>
+                </div>
+                <span
+                  class="size py-1 px-4 rounded-full uppercase text-xs"
+                  style="color: #918e8e"
+                  ><%= food.size %></span
+                >
+                <div class="flex items-center justify-evenly mt-6">
+                  <span class="font-bold text-lg">₹ <%= food.price %></span>
+                  <button
+                    data-food="<%= JSON.stringify(food) %>"
+                    class="add-to-cart py-1 px-5 rounded-full font-bold"
+                  >
+                    <span>+</span> <span class="ml-4">Add</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }%> <% })%>
+        </div>
       </div>
       <a
         href="/menu"
@@ -307,21 +346,49 @@
       filterInput4.addEventListener("keyup", filterNames4);
       function filterNames4() {
         console.log(4);
-
         // Get Value Of input
         let filterValue = document
           .getElementById("filterInput")
           .value.toUpperCase();
-
         console.log(filterValue);
-
         //Get Names ul
         let ul1 = document.getElementById("names4");
-
         let lia = ul1.querySelectorAll("div.collection-item4");
         let target1__Container = document.getElementById("names4");
         let container1__Visibility = target1__Container.querySelectorAll(
           "div.item4"
+        );
+        for (let i = 0; i < lia.length; i++) {
+          let a = lia[i].getElementsByTagName("a")[0];
+          // If Matched
+          if (a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+            lia[i].style.display = "";
+            container1__Visibility[i].style.display = "";
+          } else {
+            lia[i].style.display = "none";
+            container1__Visibility[i].style.display = "none";
+          }
+        }
+      }
+
+      // Search For WEEK
+      //Get input Element
+      let filterInput5 = document.getElementById("filterInput");
+      //Add Event Listener
+      filterInput5.addEventListener("keyup", filterNames5);
+      function filterNames5() {
+        console.log(5);
+        // Get Value Of input
+        let filterValue = document
+          .getElementById("filterInput")
+          .value.toUpperCase();
+        console.log(filterValue);
+        //Get Names ul
+        let ul1 = document.getElementById("names5");
+        let lia = ul1.querySelectorAll("div.collection-item5");
+        let target1__Container = document.getElementById("names5");
+        let container1__Visibility = target1__Container.querySelectorAll(
+          "div.item5"
         );
         for (let i = 0; i < lia.length; i++) {
           let a = lia[i].getElementsByTagName("a")[0];

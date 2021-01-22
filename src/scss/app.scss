@@ -142,6 +142,20 @@ section.hero {
   }
 }
 
+.add-to-week {
+  border: 2px solid $primary;
+  color: $primary;
+  transition: $transition;
+  &:hover {
+    background: $primary;
+    border-color: $pure;
+    color: $pure;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
 .btn-primary {
   background: $primary;
   transition: $transition;

@@ -298,28 +298,28 @@
   },
   {
     "_id": {
-      "$oid": "5eee651f739f8c674fd739ed"
+      "$oid": "5eee651f739f8c674fd739ew"
     },
     "name": "Barbecue salad",
-    "image": "lemon_tea.jpg",
+    "image": "plate1.png",
     "price": "1299",
     "size": "Large"
   },
   {
     "_id": {
-      "$oid": "5eee651f739f8c674fd740ed"
+      "$oid": "5eee651f739f8c674fd740ew"
     },
     "name": "Salad with fish",
-    "image": "lemon_tea.jpg",
+    "image": "plate2.png",
     "price": "499",
     "size": "Large"
   },
   {
     "_id": {
-      "$oid": "5eee651f739f8c674fd741ed"
+      "$oid": "5eee651f739f8c674fd741ew"
     },
     "name": "Spinach salad",
-    "image": "lemon_tea.jpg",
+    "image": "plate3.png",
     "price": " 999",
     "size": "Large"
   }

@@ -412,6 +412,20 @@ section.hero {
   outline: none;
 }
 
+.add-to-week {
+  border: 2px solid #fe5f1e;
+  color: #fe5f1e;
+  transition: all 0.3s ease-in-out;
+}
+.add-to-week:hover {
+  background: #fe5f1e;
+  border-color: #fff;
+  color: #fff;
+}
+.add-to-week:focus {
+  outline: none;
+}
+
 .btn-primary {
   background: #fe5f1e;
   transition: all 0.3s ease-in-out;

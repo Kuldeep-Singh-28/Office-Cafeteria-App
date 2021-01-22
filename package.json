@@ -4,7 +4,7 @@
   "description": "This is a realtime pizza delivery app.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "serve": "node server.js",
     "development": "mix",
     "watch": "mix watch",
