@@ -1,8 +1,8 @@
-[*] [+] Create directory structure
+[+] Create directory structure
 
-[*] [+] Create a NPM project and install all dependancies - Dependancies - express - ejs express-ejs-layouts - Dev dependancies - nodemon
+[+] Create a NPM project and install all dependancies - Dependancies - express - ejs express-ejs-layouts - Dev dependancies - nodemon
 
-[*] [+] Create Express server - Create a server.js file
+[+] Create Express server - Create a server.js file
 
 [+] Git setup and first commit
 
@@ -54,9 +54,9 @@
 
 [+] Create mode of payment
 
-[-] Build project for deployment
+[+] Build project for deployment
 
-[-] Deploy project on live server
+[+] Deploy project on live server
 
 <h1>extra work </h1>
 
