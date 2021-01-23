@@ -5,9 +5,7 @@ const bcrypt = require("bcrypt");
 function init(passport) {
   passport.use(
     new LocalStrategy(
-      //---------------deepali starts------------
       { usernameField: "employee_id" },
-      //---------------deepali ends---------------
       async (employee_id, password, done) => {
         // Login
         // check if email exists

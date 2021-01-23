@@ -34,24 +34,23 @@
             <a href="/menu" class="hover:text-green-800 nav__link active-link">Menu</a>
           </li>
           <% if(user) { %>
-            <% if(user==='admin' ) { %>
+            <% if(user.role==="customer" ) { %>
+            <li class="nav__item">
+              <a href="/customer/orders" class="hover:text-green-800 nav__link active-link">Orders</a>
+            </li>
+            <% } 
+            else { %>
               <li class="nav__item">
-                <a href="admin/orders" class="hover:text-green-800 nav__link active-link">Orders</a>
+                <a href="/admin/orders" class="hover:text-green-700 nav__link active-link">Orders</a>
               </li>
-
-              <% } else { %>
+              <% } %>
                 <li class="nav__item">
-                  <a href="/customer/orders" class="hover:text-green-700 nav__link active-link">Orders</a>
+                  <form id="logout" action="/logout" method="POST">
+                    <a class="hover:text-green-800 nav__link active-link" onclick="document.getElementById('logout').submit()"
+                      href="#">Logout</a>
+                  </form>
                 </li>
-
-                <% } %>
-                  <li class="nav__item">
-                    <form id="logout" action="/logout" method="POST">
-                      <a class="hover:text-green-800 nav__link active-link" onclick="document.getElementById('logout').submit()"
-                        href="#">Logout</a>
-                    </form>
-                  </li>
-                  <% } else { %>
+                <% } else { %>
                     <li class="nav__item">
                       <a class="hover:text-green-800 nav__link active-link" href="/register">Register</a>
                     </li>

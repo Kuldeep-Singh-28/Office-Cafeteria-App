@@ -135,7 +135,7 @@ const updateCart = (food) => {
   axios
     .post("/update-cart", food)
     .then((res) => {
-      console.log(res);
+      // console.log(res);
       cartCounter.innerText = res.data.totalqty.totalQty;
       new Noty({
         type: "success",
@@ -152,7 +152,7 @@ const updateCart = (food) => {
         progressBar: false,
       }).show();
     });
-  //   console.log(res);
+
 };
 
 addToCart.forEach((btn) => {

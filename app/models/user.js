@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// ---deepali starts---------
 const userSchema = new Schema(
   {
     employee_id: { type: String, required: true, unique: true },
@@ -15,6 +14,5 @@ const userSchema = new Schema(
   },
   { timestamps: true }
 );
-// --- deepali ends----------
 
 module.exports = mongoose.model("User", userSchema);
