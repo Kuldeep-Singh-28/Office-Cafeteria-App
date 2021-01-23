@@ -13,7 +13,7 @@ var myModule = require("../app/http/middleware/upload");
 var upload = myModule.upload;
 
 const initRoutes = (app) => {
-  // routes
+// routes
 
   //   home
   app.get("/", homeController().index);
@@ -24,9 +24,7 @@ const initRoutes = (app) => {
   app.post("/login", authController().postLogin);
   app.get("/register", guest, authController().register);
   app.post("/register", upload, authController().postRegister);
-  app.get("/preview", guest, authController().preview);
   app.post("/preview", authController().postPreview);
-  app.get("/success", guest, authController().success);
   app.post("/logout", authController().logout);
 
   //  cart

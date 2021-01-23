@@ -51,14 +51,8 @@ const authController = () => {
     },
 
     register: (req, res) => {
-      req.flash("employee_id", employee_id);
-      req.flash("name", name);
-      req.flash("email", email);
-      req.flash("organization_name", organization_name);
-      req.flash("mobile_no", mobile_no);
       return res.render("auth/register");
     },
-    // postRegister: (req, res) => {
     async postRegister(req, res) {
       // Validate request
 
@@ -102,10 +96,7 @@ const authController = () => {
         req.flash("error", "User already exists");
         return res.redirect("/register");
       }
-      return res.redirect("/preview");
-    },
 
-    preview: (req, res) => {
       return res.render("auth/preview", {
         image,
         employee_id,
@@ -143,16 +134,12 @@ const authController = () => {
           password = "";
           confirmpassword = "";
           image = "";
-          return res.redirect("/success");
+          return res.render("auth/success", { id });
         })
         .catch((err) => {
           req.flash("error", "Something went wrong");
           return res.redirect("/preview");
         });
-    },
-
-    success: (req, res) => {
-      return res.render("auth/success", { id });
     },
 
     logout(req, res) {
