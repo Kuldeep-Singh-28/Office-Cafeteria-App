@@ -4,7 +4,7 @@ const cartController = () => {
   // factory functions
   return {
     index: (req, res) => {
-      res.render("customers/Cart");
+      res.render("customers/cart");
     },
     update: (req, res) => {
       // for first time add item in cart
