@@ -1,10 +1,10 @@
 {
-  "name": "pizza-delivery-app",
+  "name": "food-cafeteria-app",
   "version": "1.0.0",
-  "description": "This is a realtime pizza delivery app.",
+  "description": "This is a stackhack2.0 app.",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "development": "mix",
     "watch": "mix watch",
     "watch-poll": "mix watch -- --watch-options-poll=1000",

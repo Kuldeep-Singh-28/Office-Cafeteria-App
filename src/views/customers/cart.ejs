@@ -59,6 +59,11 @@
                   class="mt-12"
                   id="payment-form"
                 >
+                  <% if(messages.error) { %>
+                  <span class="text-red-500 text-sm"
+                    ><%= console.log(messages.error) %></span
+                  >
+                  <% } %>
                   <div class="relative m-auto w-11/12 mb-4">
                     <select
                       id="paymentType"
@@ -87,12 +92,14 @@
                     class="border border-gray-400 p-2 w-11/12 mb-4 rounded-md"
                     type="tel"
                     placeholder="Phone number"
+                    aria-required="true"
                   />
                   <input
                     name="address"
                     class="border border-gray-400 p-2 w-11/12 rounded-md"
                     type="text"
                     placeholder="Address"
+                    required
                   />
                   <div class="mt-4">
                     <div

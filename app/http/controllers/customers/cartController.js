@@ -17,7 +17,6 @@ const cartController = () => {
       }
 
       let cart = req.session.cart;
-      console.log(req.body);
 
       // check if doesn't added in cart
       if (!cart.items[req.body._id]) {
