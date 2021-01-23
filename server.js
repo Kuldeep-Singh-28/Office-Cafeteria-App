@@ -79,6 +79,10 @@ app.set("view engine", "ejs");
 
 // routes
 require(path.join(__dirname, "/routes/web"))(app);
+// error page
+app.get("*", (req, res) => {
+  res.sendFile(__dirname + "/src/404 page/404.html");
+});
 
 // server
 const server = app.listen(PORT, () => {
