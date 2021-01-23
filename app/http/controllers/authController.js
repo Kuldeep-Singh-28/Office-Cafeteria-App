@@ -51,14 +51,8 @@ const authController = () => {
     },
 
     register: (req, res) => {
-      req.flash("employee_id", employee_id);
-      req.flash("name", name);
-      req.flash("email", email);
-      req.flash("organization_name", organization_name);
-      req.flash("mobile_no", mobile_no);
       return res.render("auth/register");
     },
-    // postRegister: (req, res) => {
     async postRegister(req, res) {
       // Validate request
 
@@ -83,38 +77,11 @@ const authController = () => {
         req.flash("error", "All fields are required");
         return res.redirect("/register");
       }
-
-      // Check if mobile no is of 10 digits or 13 digits
-      if (mobile_no.length != 10&&mobile_no.length != 13) {
-        req.flash("error", "Mobile number is not correct");
+      // Check if mobile no is of 10 digits
+      if (mobile_no.length != 10) {
+        req.flash("error", "Mobile number is not of 10 digits");
         return res.redirect("/register");
       }
-      
-      if (mobile_no.length == 13&&mobile_no[0]!='+') {
-        req.flash("error", "Mobile number is not correct");
-        return res.redirect("/register");
-      }
-
-      if (mobile_no.length == 10) 
-        for(let i=1;i <= mobile_no.length;i++)
-        {
-          if(mobile_no[i-1]>'9'||mobile_no[i-1]<'0')
-          {
-            req.flash("error", "Please Check Mobile Number");
-                return res.redirect("/register");
-          }
-        }
-
-      if (mobile_no.length == 13) 
-      for(let i=2;i <= mobile_no.length;i++)
-      {
-        if(mobile_no[i-1]>'9'||mobile_no[i-1]<'0')
-        {
-          req.flash("error", "Please Check Mobile Number");
-              return res.redirect("/register");
-        }
-      }
-
       //Check if confirm password is same as password or not
       if (confirmpassword != password) {
         req.flash("error", "Confirm password is not same as password");
@@ -129,10 +96,7 @@ const authController = () => {
         req.flash("error", "User already exists");
         return res.redirect("/register");
       }
-      return res.redirect("/preview");
-    },
 
-    preview: (req, res) => {
       return res.render("auth/preview", {
         image,
         employee_id,
@@ -170,16 +134,12 @@ const authController = () => {
           password = "";
           confirmpassword = "";
           image = "";
-          return res.redirect("/success");
+          return res.render("auth/success", { id });
         })
         .catch((err) => {
           req.flash("error", "Something went wrong");
           return res.redirect("/preview");
         });
-    },
-
-    success: (req, res) => {
-      return res.render("auth/success", { id });
     },
 
     logout(req, res) {
