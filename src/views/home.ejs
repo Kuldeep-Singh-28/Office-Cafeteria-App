@@ -9,6 +9,7 @@
 <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
 
 <body>
+    <div id="loading"></div>
     <section class="home font-bold pt-12 md:pt-0" id="home">
       <div class="home__container  bd-container bd-grid">
         <div class="home__data">
@@ -457,6 +458,22 @@
       </div>
     </section>
       <script>
+        document.onreadystatechange = function() { 
+          setTimeout(() => {
+            if (document.readyState !== "complete") { 
+                document.querySelector( 
+                  "body").style.visibility = "hidden"; 
+                document.querySelector( 
+                  "#loading").style.visibility = "visible"; 
+            } else { 
+                document.querySelector( 
+                  "#loading").style.display = "none"; 
+                document.querySelector( 
+                  "body").style.visibility = "visible"; 
+            }
+          }, 1000);
+             
+        }; 
         function toggleModal(modalID) {
           event.preventDefault();
           document.getElementById(modalID).classList.toggle("hidden");
