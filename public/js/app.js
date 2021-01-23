@@ -2350,7 +2350,7 @@ sr.reveal(".home__data, .home__img,\n            .about__data, .about__img,\n   
 var updateCart = function updateCart(food) {
   // axios
   axios__WEBPACK_IMPORTED_MODULE_0___default().post("/update-cart", food).then(function (res) {
-    console.log(res);
+    // console.log(res);
     cartCounter.innerText = res.data.totalqty.totalQty;
     new (noty__WEBPACK_IMPORTED_MODULE_1___default())({
       type: "success",
@@ -2365,7 +2365,7 @@ var updateCart = function updateCart(food) {
       text: "Something went wrong",
       progressBar: false
     }).show();
-  }); //   console.log(res);
+  });
 };
 
 addToCart.forEach(function (btn) {
@@ -28264,7 +28264,7 @@ try {
 /******/ 			return checkDeferredModules();
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkpizza_delivery_app"] = self["webpackChunkpizza_delivery_app"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkfood_cafeteria_app"] = self["webpackChunkfood_cafeteria_app"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 		
