@@ -1,4 +1,3 @@
-//--------deepali starts--------------
 var fs = require("fs");
 var path = require("path");
 var multer = require("multer");
@@ -15,4 +14,3 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage }).single("file");
 exports.upload = upload;
-//---------deepali ends--------------

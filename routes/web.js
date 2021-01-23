@@ -13,7 +13,7 @@ var myModule = require("../app/http/middleware/upload");
 var upload = myModule.upload;
 
 const initRoutes = (app) => {
-// routes
+  // routes
 
   //   home
   app.get("/", homeController().index);
