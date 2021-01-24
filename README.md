@@ -6,7 +6,7 @@
 
 # Office-Cafeteria-App
 
-Cafeteriaa is a full-stack, food and drink ordering system. The app is split into two front ends: one for the customer to order their drink(s) and/or food (Cafeteriaa Customer, or Cafeteriaa-C ), and one for the coffee shop to receive and manage orders as they come in (Cafeteriaa Admin, or Cafeteriaa-A).<br />
+Cafeteriaa is a full-stack, food and drink ordering system. The app is split into two front ends: one for the customer to order their drink(s) and/or food (Cafeteria Customer, or Cafeteria-C ), and one for the Cafeteria shop to receive and manage orders as they come in (Cafeteria Admin, or Cafeteria-A).<br />
 
 To see Cafeteriaa live in action, open a browser tab for <a href="http://Cafeteriaa.herokuapp.com/">Cafeteriaa customer</a> and a tab for <a href="https://Cafeteriaa.herokuapp.com/login">Cafeteriaa-Admin</a>. All you have to do is place an order on Cafeteriaa app, and then watch Cafeteriaa Admin receive the order.
 <br />
@@ -64,7 +64,7 @@ Admin:
 4.  As finally, Cafeteria get realtime order update from admins, who can control order status using Socket.io.
 
 • Submitted orders are sent to the database along with the user's username, to allow the display of previous and favorited orders and for Cafeteriaa-Admin to fetch the orders.<br />
-• Cafeteriaa-Admin uses Ajax to fetch orders from the database every sec second & using socket.io to get real-time order updates. <br />
+• Cafeteriaa-Admin uses Ajax to fetch orders from the database every second & using socket.io to get real-time order updates. <br />
 <br /><br />
 
 ## Snapshots
