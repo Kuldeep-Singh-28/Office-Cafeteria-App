@@ -11,10 +11,11 @@ To see Cafeteriaa live in action, open a browser tab for <a href="http://Cafeter
 <br />
 <br /><br />
 Cafeteriaa Employee
+<br /><br />
 ![Orderspagelightmode](https://user-images.githubusercontent.com/65676476/105623890-53ff6b80-5e43-11eb-9785-0c5f53d148ea.png)
 <br /><br />
 Cafeteriaa  Admin
-<br />
+<br /><br />
 ![adminorderslightmode](https://user-images.githubusercontent.com/65676476/105623832-ebb08a00-5e42-11eb-8130-18295865d748.png)
 
 ## Features
@@ -65,6 +66,9 @@ Admin:
 ![homedarkmode1](https://user-images.githubusercontent.com/65676476/105623707-bfe0d480-5e41-11eb-93a9-8a8b1e8c854d.png)
 ![menudarkmode1](https://user-images.githubusercontent.com/65676476/105623713-c4a58880-5e41-11eb-8f65-3271a652cb97.png)
 ![OrderSummarypage](https://user-images.githubusercontent.com/65676476/105623938-c1ab9780-5e43-11eb-8ed8-1ea30f56ac6b.png)
+![image](https://user-images.githubusercontent.com/65676476/105624001-34b50e00-5e44-11eb-94d0-70dc0848906e.png)
+![image](https://user-images.githubusercontent.com/65676476/105624019-51514600-5e44-11eb-804b-920c13c387bd.png)
+
 <br /><br />
 
 
